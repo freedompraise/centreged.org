@@ -1,63 +1,80 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-transform transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:scale-105 active:scale-95",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        gradient: "bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90",
-        gold: "bg-yellow-500 text-white hover:bg-yellow-600", // Added "gold" variant
-      },
-      size: {
-        default: "h-10 px-4 py-3",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-12 rounded-md px-8 text-base",
-        icon: "h-10 w-10",
-      },
-      rounded: {
-        true: "rounded-full",
-        false: "",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-      rounded: false,
-    },
-  }
-);
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-  to?: string; // Added "to" for navigation
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  href?: string;
+  to?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'gold';
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+  fullWidth?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, rounded, asChild = false, to, ...props }, ref) => {
-    const Comp = asChild ? Slot : to ? Link : "button"; // Use "Link" if "to" prop is provided
+const Button: React.FC<ButtonProps> = ({ 
+  children, 
+  onClick, 
+  href, 
+  to,
+  variant = 'primary', 
+  size = 'md',
+  className = '',
+  fullWidth = false,
+}) => {
+  const getVariantClasses = () => {
+    switch (variant) {
+      case 'secondary':
+        return 'bg-secondary text-primary hover:bg-gray-100 border border-primary';
+      case 'outline':
+        return 'bg-transparent border border-primary text-primary hover:bg-primary hover:text-white';
+      case 'gold':
+        return 'bg-gold text-white hover:bg-gold-dark';
+      default:
+        return 'bg-primary text-white hover:bg-primary-dark';
+    }
+  };
+
+  const getSizeClasses = () => {
+    switch (size) {
+      case 'sm':
+        return 'py-1 px-3 text-sm';
+      case 'lg':
+        return 'py-3 px-8 text-lg';
+      default:
+        return 'py-2 px-6';
+    }
+  };
+
+  const buttonClasses = `
+    inline-block font-inter font-medium rounded-md 
+    transition-all duration-300 transform hover:scale-95
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
+    ${getVariantClasses()} ${getSizeClasses()} ${fullWidth ? 'w-full' : ''} ${className}
+  `;
+
+  if (href) {
     return (
-      <Comp
-        {...(to ? { to } : {})} 
-        className={cn(buttonVariants({ variant, size, rounded, className }))}
-        ref={ref}
-        {...props}
-      />
+      <a href={href} className={buttonClasses}>
+        {children}
+      </a>
     );
   }
-);
 
-Button.displayName = "Button";
+  if (to) {
+    return (
+      <Link to={to} className={buttonClasses}>
+        {children}
+      </Link>
+    );
+  }
 
-export { Button, buttonVariants };
+  return (
+    <button onClick={onClick} className={buttonClasses}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
