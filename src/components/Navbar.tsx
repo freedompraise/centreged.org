@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import {
@@ -159,7 +159,7 @@ const Navbar = () => {
                 
                 {/* Capacity Building Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-gold">
+                  <NavigationMenuTrigger className="hover:text-gold">
                     Capacity Building
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -218,7 +218,7 @@ const Navbar = () => {
                 
                 {/* Diplomacy & International Relations Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-gold">
+                  <NavigationMenuTrigger className="hover:text-gold-dark">
                     Diplomacy & International Relations
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>

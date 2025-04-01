@@ -11,7 +11,7 @@ const Logo: React.FC<LogoProps> = ({ variant = 'full', className = '' }) => {
     return (
       <div className={`flex items-center ${className}`}>
         <img 
-          src="/lovable-uploads/9fca19fc-80fe-4220-bb9f-7be98a79452c.png" 
+          src="/lovable-uploads/icon.png" 
           alt="CentreGED Logo" 
           className="h-12 w-12"
         />
