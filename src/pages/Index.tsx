@@ -88,7 +88,7 @@ const Index = () => {
           >
             <div className="h-48 bg-primary relative overflow-hidden">
               <img 
-                src="https://source.unsplash.com/random/600x400/?diplomacy,africa" 
+                src="/handshake.jpg" 
                 alt="Diplomacy and International Relations" 
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
@@ -119,7 +119,7 @@ const Index = () => {
           >
             <div className="h-48 bg-primary relative overflow-hidden">
               <img 
-                src="https://source.unsplash.com/random/600x400/?research,africa" 
+                src="/research.jpg" 
                 alt="Independent Research" 
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
@@ -150,7 +150,7 @@ const Index = () => {
           >
             <div className="h-48 bg-primary relative overflow-hidden">
               <img 
-                src="https://source.unsplash.com/random/600x400/?training,africa" 
+                src="/capacity-building.jpg" 
                 alt="Capacity Building" 
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
