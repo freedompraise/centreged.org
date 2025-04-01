@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import SectionTitle from '@/components/ui/SectionTitle';
-import { Button } from '@/components/ui/button';
+import Button  from '@/components/ui/Button';
 
 interface ObjectiveProps {
   number: number;
