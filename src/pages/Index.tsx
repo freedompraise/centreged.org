@@ -195,7 +195,7 @@ const Index = () => {
             ].map((value, index) => (
               <div 
                 key={index} 
-                className="inline-block w-60 mx-4 p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition-all"
+                className="inline-block w-60 mx-4 p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition-all overflow-hidden"
               >
                 <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary rounded-full">
                   <img src={value.icon} alt={value.name} className="w-8 h-8 text-white" />
