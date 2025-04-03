@@ -142,45 +142,38 @@
   width: 100%;
   min-height: 300px; /* Ensures space for cards */
 }
-
-.scroll-content {
-  display: inline-block;
+.scroll-container {
+  overflow: hidden;
   white-space: nowrap;
+  width: 100%;
 }
 
-/* Mobile animation */
+/* Animation enabled on smaller screens */
 @media (max-width: 768px) {
   .scroll-content {
+    display: inline-block;
+    white-space: nowrap;
     animation: scroll-x 20s linear infinite;
-    padding-bottom: 20px; /* Prevents cut-off */
+  }
+  
+  .scroll-content:hover {
+    animation-play-state: paused;
   }
 }
 
-/* Desktop layout */
+/* Animation disabled on larger screens */
 @media (min-width: 769px) {
-  .scroll-container {
-    overflow: visible;
-    white-space: normal;
-    min-height: auto;
-  }
-  
   .scroll-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    animation: none !important;
-    transform: none !important; /* Resets mobile transform */
-    white-space: normal;
-    width: 100%;
-  }
-  
-  .duplicate-card {
-    display: none !important;
+    animation: none;
   }
 }
 
+/* Example keyframes (adjust as needed) */
 @keyframes scroll-x {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

@@ -185,46 +185,47 @@ const Index = () => {
         />
         
         <div className="scroll-container mt-12">
-          <div className="scroll-content">
-            {[
-              { name: 'Collaboration', icon: '/lovable-uploads/a30162f6-08fe-4365-965f-dee2fb44b03d.png', description: 'Fostering partnerships for collective impact' },
-              { name: 'Excellence', icon: '/lovable-uploads/f9ac3ba5-7f4a-40fd-8367-60210f60d378.png', description: 'Striving for the highest quality in all endeavors' },
-              { name: 'Innovation', icon: '/lovable-uploads/0b4c7af6-8d44-4888-8571-dac0ea6b842c.png', description: 'Encouraging creative solutions to development challenges' },
-              { name: 'Inclusivity', icon: '/lovable-uploads/9eb930a3-36d2-4b5c-9958-0a1a7816db49.png', description: 'Ensuring all voices are heard in the development process' },
-              { name: 'Integrity', icon: '/lovable-uploads/643fc012-84c3-44c1-bb4f-51ae6cdf777e.png', description: 'Upholding honesty and transparency in all our work' }
-            ].map((value, index) => (
-              <div 
-                key={index} 
-                className="inline-block w-60 mx-4 p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition-all overflow-hidden"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary rounded-full">
-                  <img src={value.icon} alt={value.name} className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-2">{value.name}</h3>
-                <p className="text-gray-600 text-sm">{value.description}</p>
-              </div>
-            ))}
-            {/* Duplicate for continuous scroll effect */}
-            {[
-              { name: 'Collaboration', icon: '/lovable-uploads/a30162f6-08fe-4365-965f-dee2fb44b03d.png', description: 'Fostering partnerships for collective impact' },
-              { name: 'Excellence', icon: '/lovable-uploads/f9ac3ba5-7f4a-40fd-8367-60210f60d378.png', description: 'Striving for the highest quality in all endeavors' },
-              { name: 'Innovation', icon: '/lovable-uploads/0b4c7af6-8d44-4888-8571-dac0ea6b842c.png', description: 'Encouraging creative solutions to development challenges' },
-              { name: 'Inclusivity', icon: '/lovable-uploads/9eb930a3-36d2-4b5c-9958-0a1a7816db49.png', description: 'Ensuring all voices are heard in the development process' },
-              { name: 'Integrity', icon: '/lovable-uploads/643fc012-84c3-44c1-bb4f-51ae6cdf777e.png', description: 'Upholding honesty and transparency in all our work' }
-            ].map((value, index) => (
-              <div 
-                key={`duplicate-${index}`} 
-                className="inline-block w-60 mx-4 p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition-all"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary rounded-full">
-                  <img src={value.icon} alt={value.name} className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-2">{value.name}</h3>
-                <p className="text-gray-600 text-sm">{value.description}</p>
-              </div>
-            ))}
-          </div>
+  <div className="scroll-content">
+    {[
+      { name: 'Collaboration', icon: '/lovable-uploads/a30162f6-08fe-4365-965f-dee2fb44b03d.png', description: 'Fostering partnerships for collective impact' },
+      { name: 'Excellence', icon: '/lovable-uploads/f9ac3ba5-7f4a-40fd-8367-60210f60d378.png', description: 'Striving for the highest quality in all endeavors' },
+      { name: 'Innovation', icon: '/lovable-uploads/0b4c7af6-8d44-4888-8571-dac0ea6b842c.png', description: 'Encouraging creative solutions to development challenges' },
+      { name: 'Inclusivity', icon: '/lovable-uploads/9eb930a3-36d2-4b5c-9958-0a1a7816db49.png', description: 'Ensuring all voices are heard in the development process' },
+      { name: 'Integrity', icon: '/lovable-uploads/643fc012-84c3-44c1-bb4f-51ae6cdf777e.png', description: 'Upholding honesty and transparency in all our work' }
+    ].map((value, index) => (
+      <div 
+        key={index} 
+        className="inline-block w-60 mx-4 p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition-all overflow-hidden"
+      >
+        <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary rounded-full">
+          <img src={value.icon} alt={value.name} className="w-8 h-8" />
         </div>
+        <h3 className="text-lg font-bold text-primary mb-2">{value.name}</h3>
+        <p className="text-gray-600 text-sm whitespace-normal">{value.description}</p>
+      </div>
+    ))}
+    {/* Duplicate for continuous scroll effect */}
+    {[
+      { name: 'Collaboration', icon: '/lovable-uploads/a30162f6-08fe-4365-965f-dee2fb44b03d.png', description: 'Fostering partnerships for collective impact' },
+      { name: 'Excellence', icon: '/lovable-uploads/f9ac3ba5-7f4a-40fd-8367-60210f60d378.png', description: 'Striving for the highest quality in all endeavors' },
+      { name: 'Innovation', icon: '/lovable-uploads/0b4c7af6-8d44-4888-8571-dac0ea6b842c.png', description: 'Encouraging creative solutions to development challenges' },
+      { name: 'Inclusivity', icon: '/lovable-uploads/9eb930a3-36d2-4b5c-9958-0a1a7816db49.png', description: 'Ensuring all voices are heard in the development process' },
+      { name: 'Integrity', icon: '/lovable-uploads/643fc012-84c3-44c1-bb4f-51ae6cdf777e.png', description: 'Upholding honesty and transparency in all our work' }
+    ].map((value, index) => (
+      <div 
+        key={`duplicate-${index}`} 
+        className="inline-block w-60 mx-4 p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition-all"
+      >
+        <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary rounded-full">
+          <img src={value.icon} alt={value.name} className="w-8 h-8" />
+        </div>
+        <h3 className="text-lg font-bold text-primary mb-2">{value.name}</h3>
+        <p className="text-gray-600 text-sm whitespace-normal">{value.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
       </Section>
       
       {/* Call to Action */}
