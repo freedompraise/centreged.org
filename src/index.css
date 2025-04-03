@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -138,33 +137,50 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 .scroll-container {
   overflow: hidden;
-  white-space: nowrap;
   width: 100%;
+  min-height: 300px; /* Ensures space for cards */
 }
 
 .scroll-content {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll-x 20s linear infinite;
 }
 
-.scroll-content:hover {
-  animation-play-state: paused;
+/* Mobile animation */
+@media (max-width: 768px) {
+  .scroll-content {
+    animation: scroll-x 20s linear infinite;
+    padding-bottom: 20px; /* Prevents cut-off */
+  }
 }
 
-.card-tilt {
-  transition: transform 0.3s ease;
+/* Desktop layout */
+@media (min-width: 769px) {
+  .scroll-container {
+    overflow: visible;
+    white-space: normal;
+    min-height: auto;
+  }
+  
+  .scroll-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    animation: none !important;
+    transform: none !important; /* Resets mobile transform */
+    white-space: normal;
+    width: 100%;
+  }
+  
+  .duplicate-card {
+    display: none !important;
+  }
 }
 
-.card-tilt:hover {
-  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.accordion-item {
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
