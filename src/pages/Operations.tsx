@@ -194,7 +194,7 @@ const Operations = () => {
       </Section>
 
       {/* Next Operation Navigation */}
-      <Section background="gradient" className="text-white">
+      {/* <Section background="gradient" className="text-white">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
             <h3 className="text-2xl font-bold mb-2">Explore Our Other Divisions</h3>
@@ -213,7 +213,7 @@ const Operations = () => {
             ))}
           </div>
         </div>
-      </Section>
+      </Section> */}
     </div>
   );
 };
