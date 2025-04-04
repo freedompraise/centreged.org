@@ -138,7 +138,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
             <Link to="/">
-              <Logo variant={isScrolled ? 'icon' : 'full'} />
+              <Logo variant= "icon"></Logo>
             </Link>
           </div>
           

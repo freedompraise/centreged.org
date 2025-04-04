@@ -229,7 +229,7 @@ const Index = () => {
       </Section>
       
       {/* Call to Action */}
-      <Section background="gradient" className="py-20 text-center">
+      {/* <Section background="gradient" className="py-20 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Partner with CentreGED</h2>
         <p className="text-xl max-w-2xl mx-auto mb-8">
           Join us in our mission to foster leadership excellence and sustainable development across Africa
@@ -237,7 +237,7 @@ const Index = () => {
         <Button to="/about" variant="gold" size="lg">
           Learn More About Us
         </Button>
-      </Section>
+      </Section> */}
     </div>
   );
 };

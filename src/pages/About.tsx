@@ -242,7 +242,7 @@ const About = () => {
       </Section>
 
       {/* CTA Section */}
-      <Section background="gradient" className="py-16 text-center">
+      {/* <Section background="gradient" className="py-16 text-center">
         <h2 className="text-3xl font-bold mb-6">Explore Our Operations</h2>
         <p className="text-xl max-w-2xl mx-auto mb-8">
           Learn more about how we're working to fulfill our mission through our three core divisions
@@ -250,7 +250,7 @@ const About = () => {
         <Button to="/operations/diplomacy" variant="gold" size="lg">
           View Our Operations
         </Button>
-      </Section>
+      </Section> */}
     </div>
   );
 };
