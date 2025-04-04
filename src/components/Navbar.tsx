@@ -52,44 +52,50 @@ const Navbar = () => {
       <Link to="/about" className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
         About
       </Link>
-
-      <div className="px-6 py-3 text-white">
-        <button className="flex justify-between items-center w-full hover:bg-primary-dark px-3 py-2 rounded" onClick={() => toggleSection('capacity')}>
+  
+      <div className="text-white">
+        <button 
+          className="flex justify-between items-center w-full px-6 py-3 hover:bg-primary-dark transition-colors"
+          onClick={() => toggleSection('capacity')}
+        >
           <span>Capacity Building</span>
           <ChevronDown className={`transform transition-transform ${expandedSection === 'capacity' ? 'rotate-180' : ''}`} size={20} />
         </button>
         {expandedSection === 'capacity' && (
-          <div className="pl-4 mt-2 space-y-2">
-            <Link to="/operations/capacity-building#certifications" className="block py-2 text-white hover:text-gold transition-colors" onClick={() => setIsMenuOpen(false)}>
+          <div className="pl-8 space-y-2 bg-primary-dark pb-2">
+            <Link to="/operations/capacity-building#certifications" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               Certifications
             </Link>
-            <Link to="/operations/capacity-building#corporate-training" className="block py-2 text-white hover:text-gold transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/operations/capacity-building#corporate-training" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               Corporate Training
             </Link>
-            <Link to="/operations/capacity-building#mentorship" className="block py-2 text-white hover:text-gold transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/operations/capacity-building#mentorship" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               Mentorship & Career Development
             </Link>
           </div>
         )}
       </div>
-
-      <div className="px-6 py-3 text-white">
-        <button className="flex justify-between items-center w-full hover:bg-primary-dark px-3 py-2 rounded" onClick={() => toggleSection('diplomacy')}>
+  
+      <div className="text-white">
+        <button 
+          className="flex justify-between items-center w-full px-6 py-3 hover:bg-primary-dark transition-colors"
+          onClick={() => toggleSection('diplomacy')}
+        >
           <span>Diplomacy & International Relations</span>
           <ChevronDown className={`transform transition-transform ${expandedSection === 'diplomacy' ? 'rotate-180' : ''}`} size={20} />
         </button>
         {expandedSection === 'diplomacy' && (
-          <div className="pl-4 mt-2 space-y-2">
-            <Link to="/operations/diplomacy#stakeholder-engagement" className="block py-2 text-white hover:text-gold transition-colors" onClick={() => setIsMenuOpen(false)}>
+          <div className="pl-8 space-y-2 bg-primary-dark pb-2">
+            <Link to="/operations/diplomacy#stakeholder-engagement" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               Stakeholder Engagement
             </Link>
-            <Link to="/operations/diplomacy#high-level-forums" className="block py-2 text-white hover:text-gold transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/operations/diplomacy#high-level-forums" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               High-Level Forums
             </Link>
           </div>
         )}
       </div>
-
+  
       <Link to="/operations/research" className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
         Independent Research
       </Link>
