@@ -39,7 +39,7 @@ const operationTabs = [
   },
   {
     id: 'research',
-    title: 'Independent Research',
+    title: 'Independent Research Organization',
     icon: <BookOpen className="h-6 w-6" />,
     color: 'bg-gray-700',
     description: "Generating innovative solutions to Africa's most pressing leadership, economic, and developmental challenges through evidence-based research.",
@@ -82,7 +82,7 @@ const operationTabs = [
   },
   {
     id: 'capacity-building',
-    title: 'Capacity Building',
+    title: 'Capacity Building Institute',
     icon: <GraduationCap className="h-6 w-6" />,
     color: 'bg-blue-500',
     description: "Equipping individuals and organizations with the expertise needed to drive economic and governance transformations.",

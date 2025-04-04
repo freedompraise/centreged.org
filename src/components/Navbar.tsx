@@ -58,16 +58,16 @@ const Navbar = () => {
           className="flex justify-between items-center w-full px-6 py-3 hover:bg-primary-dark transition-colors"
           onClick={() => toggleSection('capacity')}
         >
-          <span>Capacity Building</span>
+          <span>Capacity Building Institute</span>
           <ChevronDown className={`transform transition-transform ${expandedSection === 'capacity' ? 'rotate-180' : ''}`} size={20} />
         </button>
         {expandedSection === 'capacity' && (
           <div className="pl-8 space-y-2 bg-primary-dark pb-2">
             <Link to="/operations/capacity-building#certifications" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Certifications
+              Faculty & Executive Development
             </Link>
             <Link to="/operations/capacity-building#corporate-training" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Corporate Training
+              Corporate & Institutional Training
             </Link>
             <Link to="/operations/capacity-building#mentorship" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               Mentorship & Career Development
@@ -87,17 +87,20 @@ const Navbar = () => {
         {expandedSection === 'diplomacy' && (
           <div className="pl-8 space-y-2 bg-primary-dark pb-2">
             <Link to="/operations/diplomacy#stakeholder-engagement" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Stakeholder Engagement
+              Stakeholder Engagement & Policy Advocacy
             </Link>
             <Link to="/operations/diplomacy#high-level-forums" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               High-Level Forums
+            </Link>
+            <Link to="/operations/diplomacy#strategic-partnerships" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
+              International Partnerships
             </Link>
           </div>
         )}
       </div>
   
       <Link to="/operations/research" className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
-        Independent Research
+        Independent Research Organization
       </Link>
       <Link to="/publications" className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
         Research Publications
@@ -123,7 +126,7 @@ const Navbar = () => {
                   <Link to="/about" className={navigationMenuTriggerStyle}>About</Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-gold">Capacity Building</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-gold">Capacity Building Institute</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       <li className="row-span-3">
@@ -135,14 +138,8 @@ const Navbar = () => {
                         </NavigationMenuLink>
                       </li>
                       <li>
-                        <Link to="/operations/capacity-building#certifications" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Certifications</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Professional certifications in leadership, governance, and policy</p>
-                        </Link>
-                      </li>
-                      <li>
                         <Link to="/operations/capacity-building#corporate-training" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Corporate Training</div>
+                          <div className="text-sm font-medium leading-none">Corporate & Institutional Training</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Customized training programs for organizations</p>
                         </Link>
                       </li>
@@ -162,7 +159,7 @@ const Navbar = () => {
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/diplomacy">
-                            <div className="mt-4 mb-2 text-lg font-medium text-white">Diplomacy & International Relations</div>
+                            <div className="mt-4 mb-2 text-lg font-medium text-white">Hosting High-Level Forums and Summits</div>
                             <p className="text-sm leading-tight text-white/90">Facilitating dialogues, negotiations, and collaborations that promote Africa's interests</p>
                           </Link>
                         </NavigationMenuLink>
@@ -175,15 +172,15 @@ const Navbar = () => {
                       </li>
                       <li>
                         <Link to="/operations/diplomacy#high-level-forums" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">High-Level Forums</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Flagship events bringing together influential leaders</p>
+                          <div className="text-sm font-medium leading-none"> International Partnerships</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground"> Building strategic alliances with global institutions</p>
                         </Link>
                       </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link to="/operations/research" className={navigationMenuTriggerStyle}>Independent Research</Link>
+                  <Link to="/operations/research" className={navigationMenuTriggerStyle}>Independent Research Organization</Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link to="/publications" className={navigationMenuTriggerStyle}>Research Publications</Link>
