@@ -225,7 +225,7 @@ const Publications = () => {
           <div className="md:w-1/2">
             <div className="relative rounded-xl overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1605496036006-5a8641b5c470?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                src="/research-process.jpg" 
                 alt="Research Process" 
                 className="w-full h-auto"
               />
