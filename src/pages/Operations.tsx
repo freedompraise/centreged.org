@@ -1,13 +1,46 @@
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowRight, Users, BookOpen, GraduationCap } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import SectionTitle from '@/components/ui/SectionTitle';
-import  Button  from '@/components/ui/Button';
+import Button from '@/components/ui/Button';
 
-// Operations Tabs
 const operationTabs = [
+  {
+    id: 'capacity-building',
+    title: 'Capacity Building Institute',
+    icon: <GraduationCap className="h-6 w-6" />,
+    color: 'bg-blue-500',
+    description: "Equipping individuals and organizations with the expertise needed to drive economic and governance transformations.",
+    banner: 'https://source.unsplash.com/random/1200x600/?training,africa',
+    functions: [
+      {
+        id: 'certifications',
+        title: 'Faculty & Executive Development',
+        description: 'Through its faculties, the Institute offers structured learning programs that cater to different professional levels, including:',
+        items: [
+          'Faculty of Leadership, Governance, and Policy',
+          'Faculty of Political Economy, Public Administration, and Policy Analysis',
+          'Faculty of Economics, Business Management, and Taxation',
+          'Faculty of Sociology, Human Resource Management, and Organizational Studies',
+          'Faculty of Sustainable Development and Environmental Studies',
+          'Faculty of Digital Economy and Artificial Intelligence'
+        ]
+      },
+      {
+        id: 'corporate-training',
+        title: 'Corporate & Institutional Training',
+        description: 'The Institute provides customized training programs for organizations, helping businesses, NGOs, and government agencies enhance efficiency, governance structures, and leadership capacity.',
+        items: []
+      },
+      {
+        id: 'mentorship',
+        title: 'Mentorship & Career Development',
+        description: 'This division runs mentorship programs and career development initiatives to prepare the next generation of African leaders.',
+        items: []
+      }
+    ]
+  },
   {
     id: 'diplomacy',
     title: 'Diplomacy & International Relations',
@@ -17,6 +50,13 @@ const operationTabs = [
     banner: 'https://source.unsplash.com/random/1200x600/?diplomacy,africa',
     functions: [
       {
+        id: 'stakeholder-engagement',
+        title: 'Stakeholder Engagement & Policy Advocacy',
+        description: 'This division fosters collaborations between the public and private sectors, ensuring that economic and governance policies are aligned with Africa\'s long-term development goals.',
+        items: []
+      },
+      {
+        id: 'high-level-forums',
         title: 'Hosting High-Level Forums & Summits',
         description: 'This division spearheads flagship events that bring together influential leaders to discuss pressing governance and economic challenges.',
         items: [
@@ -26,11 +66,7 @@ const operationTabs = [
         ]
       },
       {
-        title: 'Stakeholder Engagement & Policy Advocacy',
-        description: 'This division fosters collaborations between the public and private sectors, ensuring that economic and governance policies are aligned with Africa\'s long-term development goals.',
-        items: []
-      },
-      {
+        id: 'strategic-partnerships',
         title: 'International Partnerships & Global Policy Integration',
         description: 'By working with diplomatic missions, international organizations, and multinational institutions, this division enhances Africa\'s voice in global decision-making platforms.',
         items: []
@@ -46,6 +82,7 @@ const operationTabs = [
     banner: 'https://source.unsplash.com/random/1200x600/?research,africa',
     functions: [
       {
+        id: 'policy-research',
         title: 'Policy Research & Analysis',
         description: 'The Centre conducts high-quality, data-driven research in areas such as:',
         items: [
@@ -58,6 +95,7 @@ const operationTabs = [
         ]
       },
       {
+        id: 'knowledge-dissemination',
         title: 'Publishing & Knowledge Dissemination',
         description: 'The research division regularly publishes:',
         items: [
@@ -66,6 +104,7 @@ const operationTabs = [
         ]
       },
       {
+        id: 'advisory-services',
         title: 'Advisory Services for Policymakers & Institutions',
         description: 'The Centre works with governments, businesses, and international organizations to provide:',
         items: [
@@ -74,40 +113,9 @@ const operationTabs = [
         ]
       },
       {
+        id: 'mentorship',
         title: 'Mentorship & Career Development',
         description: 'This division also runs mentorship programs and career development initiatives to prepare the next generation of African leaders.',
-        items: []
-      }
-    ]
-  },
-  {
-    id: 'capacity-building',
-    title: 'Capacity Building Institute',
-    icon: <GraduationCap className="h-6 w-6" />,
-    color: 'bg-blue-500',
-    description: "Equipping individuals and organizations with the expertise needed to drive economic and governance transformations.",
-    banner: 'https://source.unsplash.com/random/1200x600/?training,africa',
-    functions: [
-      {
-        title: 'Faculty & Executive Development',
-        description: 'Through its faculties, the Institute offers structured learning programs that cater to different professional levels, including:',
-        items: [
-          'Faculty of Leadership, Governance, and Policy',
-          'Faculty of Political Economy, Public Administration, and Policy Analysis',
-          'Faculty of Economics, Business Management, and Taxation',
-          'Faculty of Sociology, Human Resource Management, and Organizational Studies',
-          'Faculty of Sustainable Development and Environmental Studies',
-          'Faculty of Digital Economy and Artificial Intelligence'
-        ]
-      },
-      {
-        title: 'Corporate & Institutional Training',
-        description: 'The Institute provides customized training programs for organizations, helping businesses, NGOs, and government agencies enhance efficiency, governance structures, and leadership capacity.',
-        items: []
-      },
-      {
-        title: 'Mentorship & Career Development',
-        description: 'This division runs mentorship programs and career development initiatives to prepare the next generation of African leaders.',
         items: []
       }
     ]
@@ -115,14 +123,13 @@ const operationTabs = [
 ];
 
 const Operations = () => {
-  const { operationId = 'diplomacy' } = useParams<{ operationId: string }>();
+  const { operationId = 'capacity-building' } = useParams<{ operationId: string }>();
   const navigate = useNavigate();
   
   const currentOperation = operationTabs.find(op => op.id === operationId) || operationTabs[0];
 
   return (
     <div>
-      {/* Operations Hero */}
       <section 
         className="pt-32 pb-16 bg-cover bg-center text-white relative"
         style={{ 
@@ -141,7 +148,6 @@ const Operations = () => {
         </div>
       </section>
 
-      {/* Operations Navigation */}
       <div className="bg-gray-100 border-b border-gray-200 sticky top-16 z-30">
         <div className="container mx-auto px-4">
           <div className="flex overflow-x-auto py-2 no-scrollbar">
@@ -163,7 +169,6 @@ const Operations = () => {
         </div>
       </div>
 
-      {/* Operation Content */}
       <Section>
         <SectionTitle 
           title={`${currentOperation.title}`}
@@ -172,7 +177,11 @@ const Operations = () => {
         
         <div className="space-y-12 mt-8">
           {currentOperation.functions.map((func, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-8">
+            <div 
+              key={index}
+              id={func.id}
+              className="bg-white rounded-lg shadow-md p-8 scroll-mt-20"
+            >
               <h3 className="text-2xl font-bold text-primary mb-4">{func.title}</h3>
               <p className="text-gray-600 mb-6">{func.description}</p>
               
@@ -192,28 +201,6 @@ const Operations = () => {
           ))}
         </div>
       </Section>
-
-      {/* Next Operation Navigation */}
-      {/* <Section background="gradient" className="text-white">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div>
-            <h3 className="text-2xl font-bold mb-2">Explore Our Other Divisions</h3>
-            <p className="text-lg">Learn about all three pillars of CentreGED's operations</p>
-          </div>
-          
-          <div className="flex space-x-4 mt-6 md:mt-0">
-            {operationTabs.filter(tab => tab.id !== operationId).map((tab) => (
-              <Button 
-                key={tab.id}
-                to={`/operations/${tab.id}`}
-                variant="gold"
-              >
-                {tab.title}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </Section> */}
     </div>
   );
 };

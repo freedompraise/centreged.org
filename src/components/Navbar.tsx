@@ -63,7 +63,7 @@ const Navbar = () => {
         </button>
         {expandedSection === 'capacity' && (
           <div className="pl-8 space-y-2 bg-primary-dark pb-2">
-            <Link to="/operations/capacity-building#faculty" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/operations/capacity-building#certifications" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               Faculty & Executive Development
             </Link>
             <Link to="/operations/capacity-building#corporate-training" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
@@ -87,12 +87,12 @@ const Navbar = () => {
         {expandedSection === 'diplomacy' && (
           <div className="pl-8 space-y-2 bg-primary-dark pb-2">
             <Link to="/operations/diplomacy#stakeholder-engagement" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Stakeholder Engagement
+              Stakeholder Engagement & Policy Advocacy
             </Link>
             <Link to="/operations/diplomacy#high-level-forums" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               High-Level Forums
             </Link>
-            <Link to="/operations/diplomacy#international-partnerships" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/operations/diplomacy#strategic-partnerships" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
               International Partnerships
             </Link>
           </div>
@@ -155,7 +155,7 @@ const Navbar = () => {
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
-                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/capacity-building#faculty">
+                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/capacity-building">
                             <div className="mt-4 mb-2 text-lg font-medium text-white">Faculty & Executive Development</div>
                             <p className="text-sm leading-tight text-white/90">Structured learning programs through specialized faculties</p>
                           </Link>
@@ -178,13 +178,13 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-gold">Diplomacy & International Relations</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-gold-dark">Diplomacy & International Relations</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
-                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/diplomacy#high-level-forums">
-                            <div className="mt-4 mb-2 text-lg font-medium text-white">High-Level Forums</div>
+                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/diplomacy">
+                            <div className="mt-4 mb-2 text-lg font-medium text-white">High-Level Forums & Summits</div>
                             <p className="text-sm leading-tight text-white/90">Facilitating continental dialogues and collaborations</p>
                           </Link>
                         </NavigationMenuLink>
@@ -211,7 +211,7 @@ const Navbar = () => {
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
-                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/research#policy-research">
+                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/research">
                             <div className="mt-4 mb-2 text-lg font-medium text-white">Research & Policy Analysis</div>
                             <p className="text-sm leading-tight text-white/90">Evidence-based solutions for governance challenges</p>
                           </Link>
