@@ -90,7 +90,7 @@
 
 .geometric-shape {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.2;
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(42, 92, 130, 0.2) 0%, rgba(26, 54, 93, 0.3) 100%);
   animation: float 8s ease-in-out infinite;

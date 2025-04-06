@@ -34,10 +34,10 @@ const Navbar = () => {
     setExpandedSection(prev => prev === section ? null : section);
   };
 
-  const navbarClasses = `fixed w-full z-50 transition-all duration-300 ${
+  const navbarClasses = `fixed w-full z-50 transition- bg-primary  duration-300 ${
     isScrolled || isMobile || isMenuOpen 
-      ? 'bg-primary shadow-lg py-2' 
-      : 'bg-transparent py-4'
+      ? 'shadow-lg py-2' 
+      : 'py-4'
   }`;
 
   const navigationMenuTriggerStyle = cn(

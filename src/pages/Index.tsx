@@ -1,4 +1,3 @@
-
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Section from '@/components/ui/Section';
@@ -45,17 +44,17 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="min-h-screen relative flex items-center overflow-hidden bg-gradient-primary">
+      <section className="min-h-screen relative flex items-center overflow-hidden bg-white">
         {generateShapes()}
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white">
+          <div className="max-w-3xl mx-auto text-center">
             <div className="mb-8 flex justify-center animate-fade-in">
               <Logo variant="full" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black opacity-0 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
               Catalyzing Transformative Leadership in Africa
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+            <p className="text-xl md:text-2xl mb-8 text-blue-700 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
               Fostering leadership excellence and promoting sustainable economic development across the continent
             </p>
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}>
