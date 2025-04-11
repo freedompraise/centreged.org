@@ -93,7 +93,7 @@ const Index = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-70"></div>
               <div className="absolute bottom-0 left-0 p-4 text-white">
-                <h3 className="text-xl font-bold">Diplomacy</h3>
+                <h3 className="text-xl font-bold">International Relations & Diplomacy</h3>
               </div>
             </div>
             <div className="p-6">
@@ -124,7 +124,7 @@ const Index = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-70"></div>
               <div className="absolute bottom-0 left-0 p-4 text-white">
-                <h3 className="text-xl font-bold">Research</h3>
+                <h3 className="text-xl font-bold">Independent Research Organization</h3>
               </div>
             </div>
             <div className="p-6">
@@ -155,7 +155,7 @@ const Index = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-70"></div>
               <div className="absolute bottom-0 left-0 p-4 text-white">
-                <h3 className="text-xl font-bold">Capacity Building</h3>
+                <h3 className="text-xl font-bold">Capacity Building Institute</h3>
               </div>
             </div>
             <div className="p-6">
