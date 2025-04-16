@@ -33,7 +33,7 @@ import { Hero, ContentSection, CardItem, ListItemWithIcon, CallToAction } from '
 
 // Import recharts components for the data visualization
 import {
-  BarChart,
+  BarChart as RechartsBarChart,
   Bar,
   XAxis,
   YAxis,
@@ -162,7 +162,7 @@ const PolicyResearchAnalysis = () => {
                   </ul>
                   <div className="h-64 w-full mt-8 mb-4">
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart
+                      <RechartsBarChart
                         data={economicData}
                         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                       >
@@ -173,7 +173,7 @@ const PolicyResearchAnalysis = () => {
                         <Legend />
                         <Bar dataKey="actual" name="Actual Growth (%)" fill="#2A5C82" />
                         <Bar dataKey="projected" name="Projected Growth (%)" fill="#D4AF37" />
-                      </BarChart>
+                      </RechartsBarChart>
                     </ResponsiveContainer>
                     <p className="text-xs text-gray-500 text-center mt-2">
                       Sample: Sub-Saharan Africa GDP Growth Rates (2020-2025)

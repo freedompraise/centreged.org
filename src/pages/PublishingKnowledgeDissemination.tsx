@@ -9,7 +9,9 @@ import {
   ExternalLink, 
   Search,
   Globe,
-  MessageSquare
+  MessageSquare,
+  Users,
+  Cpu
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Button from '@/components/ui/button';
@@ -57,7 +59,7 @@ const publicationCategories = [
   {
     title: "Technology & Innovation",
     description: "Insights on technology, innovation, and digital transformation.",
-    icon: <Cpu size={24} />
+    icon: <Users size={24} />
   }
 ];
 
