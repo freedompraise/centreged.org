@@ -1,8 +1,9 @@
+
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import SectionTitle from '@/components/ui/SectionTitle';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/button';
 import Logo from '@/components/Logo';
 
 const Index = () => {
