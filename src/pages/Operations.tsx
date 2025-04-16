@@ -17,7 +17,7 @@ const operationTabs = [
       {
         id: 'certifications',
         title: 'Faculty & Executive Development',
-        description: 'Through its faculties, the Institute offers structured learning programs that cater to different professional levels, including:',
+        description: 'Through its faculties, the Institute offers structured learning programs for multiple professional levels.',
         items: [
           'Faculty of Leadership, Governance, and Policy',
           'Faculty of Political Economy, Public Administration, and Policy Analysis',
@@ -30,14 +30,14 @@ const operationTabs = [
       {
         id: 'corporate-training',
         title: 'Corporate & Institutional Training',
-        description: 'The Institute provides customized training programs for organizations, helping businesses, NGOs, and government agencies enhance efficiency, governance structures, and leadership capacity.',
-        items: []
+        description: 'Customized training programs for organizations, enabling enhanced efficiency, governance, and leadership capacity.',
+        route: '/operations/corporate-training'
       },
       {
         id: 'mentorship',
         title: 'Mentorship & Career Development',
-        description: 'This division runs mentorship programs and career development initiatives to prepare the next generation of African leaders.',
-        items: []
+        description: 'Mentorship programs and career development initiatives to empower the next generation of African leaders.',
+        route: '/operations/mentorship-career-development'
       }
     ]
   },
@@ -46,29 +46,29 @@ const operationTabs = [
     title: 'Diplomacy & International Relations',
     icon: <Users className="h-6 w-6" />,
     color: 'bg-blue-500',
-    description: "Facilitating dialogues, negotiations, and collaborations that promote Africa's economic, political, and diplomatic interests on a continental and global scale.",
+    description: "Facilitating dialogues, negotiations, and collaborations that promote Africa's interests on a global scale.",
     banner: 'https://source.unsplash.com/random/1200x600/?diplomacy,africa',
     functions: [
       {
         id: 'stakeholder-engagement',
         title: 'Stakeholder Engagement & Policy Advocacy',
-        description: 'This division fosters collaborations between the public and private sectors, ensuring that economic and governance policies are aligned with Africa\'s long-term development goals.',
+        description: 'Fostering collaborations between public and private sectors to align governance with Africa’s development goals.',
         items: []
       },
       {
         id: 'high-level-forums',
         title: 'Hosting High-Level Forums & Summits',
-        description: 'This division spearheads flagship events that bring together influential leaders to discuss pressing governance and economic challenges.',
+        description: 'Flagship events that convene influential leaders to discuss pressing economic and governance challenges.',
         items: [
-          'Africa Economic Forum - A premier platform for discussing Africa\'s economic trends, policies, and investment opportunities.',
-          'National Economic Forum - A policy-driven initiative addressing national economic challenges and solutions.',
-          'National Leadership Colloquium - A leadership development gathering focused on public and private sector governance excellence.',
+          'Africa Economic Forum',
+          'National Economic Forum',
+          'National Leadership Colloquium'
         ]
       },
       {
         id: 'strategic-partnerships',
         title: 'International Partnerships & Global Policy Integration',
-        description: 'By working with diplomatic missions, international organizations, and multinational institutions, this division enhances Africa\'s voice in global decision-making platforms.',
+        description: 'Enhancing Africa’s global voice through collaborations with diplomatic missions and multinational institutions.',
         items: []
       }
     ]
@@ -78,13 +78,13 @@ const operationTabs = [
     title: 'Independent Research Organization',
     icon: <BookOpen className="h-6 w-6" />,
     color: 'bg-gray-700',
-    description: "Generating innovative solutions to Africa's most pressing leadership, economic, and developmental challenges through evidence-based research.",
+    description: "Generating innovative solutions to Africa's leadership, economic, and developmental challenges through evidence-based research.",
     banner: 'https://source.unsplash.com/random/1200x600/?research,africa',
     functions: [
       {
         id: 'policy-research',
         title: 'Policy Research & Analysis',
-        description: 'The Centre conducts high-quality, data-driven research in areas such as:',
+        description: 'High-quality, data-driven research covering various aspects of governance, economic policies, and public administration.',
         items: [
           'Leadership and governance best practices',
           'Economic policies for sustainable growth',
@@ -97,25 +97,19 @@ const operationTabs = [
       {
         id: 'knowledge-dissemination',
         title: 'Publishing & Knowledge Dissemination',
-        description: 'The research division regularly publishes:',
-        items: [
-          'Policy papers, research reports, and white papers to guide decision-making.',
-          'Economic and governance journals featuring insights from scholars, practitioners, and thought leaders.'
-        ]
+        description: 'Publishing policy papers, research reports, and journals to guide decision-making.',
+        items: []
       },
       {
         id: 'advisory-services',
         title: 'Advisory Services for Policymakers & Institutions',
-        description: 'The Centre works with governments, businesses, and international organizations to provide:',
-        items: [
-          'Evidence-based recommendations for governance and economic strategies.',
-          'Legislative and regulatory reforms to improve national and regional policies.'
-        ]
+        description: 'Providing evidence-based recommendations, legislative reforms, and technical assistance.',
+        items: []
       },
       {
         id: 'mentorship',
         title: 'Mentorship & Career Development',
-        description: 'This division also runs mentorship programs and career development initiatives to prepare the next generation of African leaders.',
+        description: 'Also includes mentorship programs to groom future leaders.',
         items: []
       }
     ]
@@ -138,12 +132,8 @@ const Operations = () => {
       >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-              {currentOperation.title}
-            </h1>
-            <p className="text-xl animate-fade-in">
-              {currentOperation.description}
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{currentOperation.title}</h1>
+            <p className="text-xl">{currentOperation.description}</p>
           </div>
         </div>
       </section>
@@ -171,34 +161,41 @@ const Operations = () => {
 
       <Section>
         <SectionTitle 
-          title={`${currentOperation.title}`}
+          title={currentOperation.title}
           subtitle="Key Functions & Initiatives"
         />
-        
         <div className="space-y-12 mt-8">
-          {currentOperation.functions.map((func, index) => (
-            <div 
+            {currentOperation.functions.map((func, index) => (
+            <div
               key={index}
               id={func.id}
-              className="bg-white rounded-lg shadow-md p-8 scroll-mt-20"
+              className={`bg-white rounded-lg shadow-md p-8 scroll-mt-20 transition-transform transform ${
+              func.route ? 'hover:scale-105 cursor-pointer' : ''
+              }`}
+              onClick={() => func.route && navigate(func.route)}
             >
               <h3 className="text-2xl font-bold text-primary mb-4">{func.title}</h3>
               <p className="text-gray-600 mb-6">{func.description}</p>
-              
-              {func.items.length > 0 && (
+              {func.route ? (
+              <a href={func.route} className="inline-block px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark">
+                Explore {func.title}
+              </a>
+              ) : (
+              func.items.length > 0 && (
                 <ul className="space-y-4">
-                  {func.items.map((item, i) => (
-                    <li key={i} className="flex">
-                      <div className="mr-4 mt-1 text-gold">
-                        <ArrowRight size={16} />
-                      </div>
-                      <p>{item}</p>
-                    </li>
-                  ))}
+                {func.items.map((item, i) => (
+                  <li key={i} className="flex">
+                  <div className="mr-4 mt-1 text-gold">
+                    <ArrowRight size={16} />
+                  </div>
+                  <p>{item}</p>
+                  </li>
+                ))}
                 </ul>
+              )
               )}
             </div>
-          ))}
+            ))}
         </div>
       </Section>
     </div>
