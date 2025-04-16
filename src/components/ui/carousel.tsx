@@ -200,24 +200,28 @@ const CarouselPrevious = React.forwardRef<
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
-    <Button
+    <div
       ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
-      disabled={!canScrollPrev}
-      onClick={scrollPrev}
-      {...props}
     >
-      <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
-    </Button>
+      <Button
+        variant={variant}
+        size={size}
+        className="h-8 w-8 rounded-full p-0"
+        disabled={!canScrollPrev}
+        onClick={scrollPrev}
+        {...props}
+      >
+        <ArrowLeft className="h-4 w-4" />
+        <span className="sr-only">Previous slide</span>
+      </Button>
+    </div>
   )
 })
 CarouselPrevious.displayName = "CarouselPrevious"
@@ -229,10 +233,8 @@ const CarouselNext = React.forwardRef<
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (
-    <Button
+    <div
       ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
         "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
@@ -240,13 +242,19 @@ const CarouselNext = React.forwardRef<
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
-      disabled={!canScrollNext}
-      onClick={scrollNext}
-      {...props}
     >
-      <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
-    </Button>
+      <Button
+        variant={variant}
+        size={size}
+        className="h-8 w-8 rounded-full p-0"
+        disabled={!canScrollNext}
+        onClick={scrollNext}
+        {...props}
+      >
+        <ArrowRight className="h-4 w-4" />
+        <span className="sr-only">Next slide</span>
+      </Button>
+    </div>
   )
 })
 CarouselNext.displayName = "CarouselNext"
