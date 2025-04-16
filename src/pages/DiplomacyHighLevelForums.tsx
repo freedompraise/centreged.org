@@ -11,7 +11,8 @@ import {
   ArrowUpRight, 
   FileText,
   Download,
-  Video
+  Video,
+  Building
 } from 'lucide-react';
 import { 
   Tabs, 

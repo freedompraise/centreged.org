@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -17,7 +16,15 @@ import {
   Target, 
   FileText, 
   Globe,
-  BarChart3
+  BarChart3,
+  LineChart,
+  Layers,
+  PenTool,
+  GraduationCap,
+  BarChart,
+  Download,
+  ExternalLink,
+  Building
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Section from '@/components/ui/Section';
