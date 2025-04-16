@@ -53,17 +53,13 @@ const operationTabs = [
         id: 'stakeholder-engagement',
         title: 'Stakeholder Engagement & Policy Advocacy',
         description: 'Fostering collaborations between public and private sectors to align governance with Africa’s development goals.',
-        items: []
+        route: '/operations/diplomacy-stakeholder-engagement'
       },
       {
         id: 'high-level-forums',
         title: 'Hosting High-Level Forums & Summits',
         description: 'Flagship events that convene influential leaders to discuss pressing economic and governance challenges.',
-        items: [
-          'Africa Economic Forum',
-          'National Economic Forum',
-          'National Leadership Colloquium'
-        ]
+        route: '/operations/diplomacy-high-level-forums'
       },
       {
         id: 'strategic-partnerships',
@@ -85,32 +81,19 @@ const operationTabs = [
         id: 'policy-research',
         title: 'Policy Research & Analysis',
         description: 'High-quality, data-driven research covering various aspects of governance, economic policies, and public administration.',
-        items: [
-          'Leadership and governance best practices',
-          'Economic policies for sustainable growth',
-          'Political economy and public administration reforms',
-          'Social policy and welfare strategies',
-          'Sustainable development models',
-          'Artificial Intelligence and digital transformation in governance'
-        ]
+        route: '/operations/policy-research'
       },
       {
         id: 'knowledge-dissemination',
         title: 'Publishing & Knowledge Dissemination',
         description: 'Publishing policy papers, research reports, and journals to guide decision-making.',
-        items: []
+        route: '/operations/knowledge-dissemination'
       },
       {
         id: 'advisory-services',
         title: 'Advisory Services for Policymakers & Institutions',
         description: 'Providing evidence-based recommendations, legislative reforms, and technical assistance.',
-        items: []
-      },
-      {
-        id: 'mentorship',
-        title: 'Mentorship & Career Development',
-        description: 'Also includes mentorship programs to groom future leaders.',
-        items: []
+        route: '/operations/advisory-services'
       }
     ]
   }
@@ -165,37 +148,37 @@ const Operations = () => {
           subtitle="Key Functions & Initiatives"
         />
         <div className="space-y-12 mt-8">
-            {currentOperation.functions.map((func, index) => (
+          {currentOperation.functions.map((func, index) => (
             <div
               key={index}
               id={func.id}
               className={`bg-white rounded-lg shadow-md p-8 scroll-mt-20 transition-transform transform ${
-              func.route ? 'hover:scale-105 cursor-pointer' : ''
+                func.route ? 'hover:scale-105 cursor-pointer' : ''
               }`}
               onClick={() => func.route && navigate(func.route)}
             >
               <h3 className="text-2xl font-bold text-primary mb-4">{func.title}</h3>
               <p className="text-gray-600 mb-6">{func.description}</p>
               {func.route ? (
-              <a href={func.route} className="inline-block px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark">
-                Explore {func.title}
-              </a>
+                <a href={func.route} className="inline-block px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark">
+                  Explore {func.title}
+                </a>
               ) : (
-              func.items.length > 0 && (
-                <ul className="space-y-4">
-                {func.items.map((item, i) => (
-                  <li key={i} className="flex">
-                  <div className="mr-4 mt-1 text-gold">
-                    <ArrowRight size={16} />
-                  </div>
-                  <p>{item}</p>
-                  </li>
-                ))}
-                </ul>
-              )
+                func.items.length > 0 && (
+                  <ul className="space-y-4">
+                    {func.items.map((item, i) => (
+                      <li key={i} className="flex">
+                        <div className="mr-4 mt-1 text-gold">
+                          <ArrowRight size={16} />
+                        </div>
+                        <p>{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                )
               )}
             </div>
-            ))}
+          ))}
         </div>
       </Section>
     </div>
