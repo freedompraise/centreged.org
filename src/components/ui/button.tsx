@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
@@ -46,9 +46,9 @@ export const buttonVariants = cva(
 
 export interface ButtonPropsWithVariants extends ButtonProps, VariantProps<typeof buttonVariants> {}
 
-export type ButtonType = React.FC<ButtonProps>;
+export type ButtonType = React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>>;
 
-const Button: ButtonType = ({ 
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({ 
   children, 
   onClick, 
   href, 
@@ -58,7 +58,8 @@ const Button: ButtonType = ({
   className = '',
   fullWidth = false,
   disabled = false,
-}) => {
+  ...props
+}, ref) => {
   const getVariantClasses = () => {
     switch (variant) {
       case 'secondary':
@@ -94,7 +95,7 @@ const Button: ButtonType = ({
 
   if (href) {
     return (
-      <a href={href} className={buttonClasses} aria-disabled={disabled}>
+      <a href={href} className={buttonClasses} aria-disabled={disabled} ref={ref as React.Ref<HTMLAnchorElement>} {...props}>
         {children}
       </a>
     );
@@ -102,18 +103,20 @@ const Button: ButtonType = ({
 
   if (to) {
     return (
-      <Link to={to} className={buttonClasses} aria-disabled={disabled}>
+      <Link to={to} className={buttonClasses} aria-disabled={disabled} ref={ref as React.Ref<HTMLAnchorElement>} {...props}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className={buttonClasses} disabled={disabled}>
+    <button onClick={onClick} className={buttonClasses} disabled={disabled} ref={ref as React.Ref<HTMLButtonElement>} {...props}>
       {children}
     </button>
   );
-};
+});
+
+Button.displayName = "Button";
 
 export { Button };
 export default Button;
