@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
-interface ButtonProps {
+export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
@@ -13,7 +15,39 @@ interface ButtonProps {
   fullWidth?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ 
+export const buttonVariants = cva(
+  "inline-block font-inter font-medium rounded-md transition-all duration-300 transform hover:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary",
+  {
+    variants: {
+      variant: {
+        primary: "bg-primary text-white hover:bg-primary-dark",
+        secondary: "bg-secondary text-primary hover:bg-gray-100 border border-primary",
+        outline: "bg-transparent border border-primary text-primary hover:bg-primary hover:text-white",
+        gold: "bg-gold text-white hover:bg-gold-dark",
+      },
+      size: {
+        sm: "py-1 px-3 text-sm",
+        md: "py-2 px-6",
+        lg: "py-3 px-8 text-lg",
+      },
+      fullWidth: {
+        true: "w-full",
+        false: "",
+      }
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+      fullWidth: false,
+    },
+  }
+);
+
+export interface ButtonPropsWithVariants extends ButtonProps, VariantProps<typeof buttonVariants> {}
+
+export type ButtonType = React.FC<ButtonProps>;
+
+const Button: ButtonType = ({ 
   children, 
   onClick, 
   href, 
@@ -77,4 +111,5 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
+export { Button };
 export default Button;
