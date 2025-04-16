@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils";
 
 export interface ButtonProps {
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
   href?: string;
   to?: string;
   variant?: 'primary' | 'secondary' | 'outline' | 'gold';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   fullWidth?: boolean;
+  disabled?: boolean;
 }
 
 export const buttonVariants = cva(
@@ -56,6 +57,7 @@ const Button: ButtonType = ({
   size = 'md',
   className = '',
   fullWidth = false,
+  disabled = false,
 }) => {
   const getVariantClasses = () => {
     switch (variant) {
@@ -81,16 +83,18 @@ const Button: ButtonType = ({
     }
   };
 
+  const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : '';
+
   const buttonClasses = `
     inline-block font-inter font-medium rounded-md 
     transition-all duration-300 transform hover:scale-95
     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
-    ${getVariantClasses()} ${getSizeClasses()} ${fullWidth ? 'w-full' : ''} ${className}
+    ${getVariantClasses()} ${getSizeClasses()} ${fullWidth ? 'w-full' : ''} ${disabledClasses} ${className}
   `;
 
   if (href) {
     return (
-      <a href={href} className={buttonClasses}>
+      <a href={href} className={buttonClasses} aria-disabled={disabled}>
         {children}
       </a>
     );
@@ -98,14 +102,14 @@ const Button: ButtonType = ({
 
   if (to) {
     return (
-      <Link to={to} className={buttonClasses}>
+      <Link to={to} className={buttonClasses} aria-disabled={disabled}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className={buttonClasses}>
+    <button onClick={onClick} className={buttonClasses} disabled={disabled}>
       {children}
     </button>
   );
