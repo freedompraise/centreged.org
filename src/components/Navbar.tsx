@@ -13,6 +13,73 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from '@/lib/utils';
 
+const navLinks = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Capacity Building Institute",
+    children: [
+      {
+        name: "Faculty & Executive Development",
+        path: "/operations/capacity-building#certifications",
+      },
+      {
+        name: "Corporate & Institutional Training",
+        path: "/operations/capacity-building#corporate-training",
+      },
+      {
+        name: "Mentorship & Career Development",
+        path: "/operations/capacity-building#mentorship",
+      },
+    ],
+  },
+  {
+    name: "Diplomacy & International Relations",
+    children: [
+      {
+        name: "Stakeholder Engagement & Policy Advocacy",
+        path: "/operations/diplomacy#stakeholder-engagement",
+      },
+      {
+        name: "High-Level Forums",
+        path: "/operations/diplomacy#high-level-forums",
+      },
+      {
+        name: "International Partnerships",
+        path: "/operations/diplomacy#strategic-partnerships",
+      },
+    ],
+  },
+  {
+    name: "Independent Research Organization",
+    children: [
+      {
+        name: "Policy Research & Analysis",
+        path: "/operations/research#policy-research",
+      },
+      {
+        name: "Knowledge Dissemination",
+        path: "/operations/research#knowledge-dissemination",
+      },
+      {
+        name: "Advisory Services",
+        path: "/operations/research#advisory-services",
+      },
+
+    ],
+  },
+  {
+    name: "Research Publications",
+    path: "/publications",
+  },
+];
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,88 +113,34 @@ const Navbar = () => {
 
   const mobileMenu = (
     <div className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col bg-primary absolute top-full left-0 right-0 shadow-xl`}>
-      <Link to="/" className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
-        Home
-      </Link>
-      <Link to="/about" className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
-        About
-      </Link>
-
-      <div className="text-white">
-        <button 
-          className="flex justify-between items-center w-full px-6 py-3 hover:bg-primary-dark transition-colors"
-          onClick={() => toggleSection('capacity')}
-        >
-          <span>Capacity Building Institute</span>
-          <ChevronDown className={`transform transition-transform ${expandedSection === 'capacity' ? 'rotate-180' : ''}`} size={20} />
-        </button>
-        {expandedSection === 'capacity' && (
-          <div className="pl-8 space-y-2 bg-primary-dark pb-2">
-            <Link to="/operations/capacity-building#certifications" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Faculty & Executive Development
+      {navLinks.map((link) => (
+        <div key={link.name} className="text-white">
+          {link.children ? (
+            <>
+              <button 
+                className="flex justify-between items-center w-full px-6 py-3 hover:bg-primary-dark transition-colors"
+                onClick={() => toggleSection(link.name)}
+              >
+                <span>{link.name}</span>
+                <ChevronDown className={`transform transition-transform ${expandedSection === link.name ? 'rotate-180' : ''}`} size={20} />
+              </button>
+              {expandedSection === link.name && (
+                <div className="pl-8 space-y-2 bg-primary-dark pb-2">
+                  {link.children.map((child) => (
+                    <Link key={child.name} to={child.path} className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
+                      {child.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <Link to={link.path} className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
+              {link.name}
             </Link>
-            <Link to="/operations/capacity-building#corporate-training" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Corporate & Institutional Training
-            </Link>
-            <Link to="/operations/capacity-building#mentorship" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Mentorship & Career Development
-            </Link>
-          </div>
-        )}
-      </div>
-
-      <div className="text-white">
-        <button 
-          className="flex justify-between items-center w-full px-6 py-3 hover:bg-primary-dark transition-colors"
-          onClick={() => toggleSection('diplomacy')}
-        >
-          <span>Diplomacy & International Relations</span>
-          <ChevronDown className={`transform transition-transform ${expandedSection === 'diplomacy' ? 'rotate-180' : ''}`} size={20} />
-        </button>
-        {expandedSection === 'diplomacy' && (
-          <div className="pl-8 space-y-2 bg-primary-dark pb-2">
-            <Link to="/operations/diplomacy#stakeholder-engagement" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Stakeholder Engagement & Policy Advocacy
-            </Link>
-            <Link to="/operations/diplomacy#high-level-forums" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              High-Level Forums
-            </Link>
-            <Link to="/operations/diplomacy#strategic-partnerships" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              International Partnerships
-            </Link>
-          </div>
-        )}
-      </div>
-
-      <div className="text-white">
-        <button 
-          className="flex justify-between items-center w-full px-6 py-3 hover:bg-primary-dark transition-colors"
-          onClick={() => toggleSection('research')}
-        >
-          <span>Independent Research Organization</span>
-          <ChevronDown className={`transform transition-transform ${expandedSection === 'research' ? 'rotate-180' : ''}`} size={20} />
-        </button>
-        {expandedSection === 'research' && (
-          <div className="pl-8 space-y-2 bg-primary-dark pb-2">
-            <Link to="/operations/research#policy-research" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Policy Research & Analysis
-            </Link>
-            <Link to="/operations/research#knowledge-dissemination" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Knowledge Dissemination
-            </Link>
-            <Link to="/operations/research#advisory-services" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Advisory Services
-            </Link>
-            <Link to="/operations/research#mentorship" className="block py-2 text-white hover:text-gold transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Mentorship Programs
-            </Link>
-          </div>
-        )}
-      </div>
-
-      <Link to="/publications" className="px-6 py-3 text-white hover:bg-primary-dark transition-colors" onClick={() => setIsMenuOpen(false)}>
-        Research Publications
-      </Link>
+          )}
+        </div>
+      ))}
     </div>
   );
 
@@ -142,106 +155,31 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <NavigationMenu>
               <NavigationMenuList>
-                <NavigationMenuItem>
-                  <Link to="/" className={navigationMenuTriggerStyle}>Home</Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link to="/about" className={navigationMenuTriggerStyle}>About</Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-gold">Capacity Building Institute</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/capacity-building">
-                            <div className="mt-4 mb-2 text-lg font-medium text-white">Faculty & Executive Development</div>
-                            <p className="text-sm leading-tight text-white/90">Structured learning programs through specialized faculties</p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <Link to="/operations/capacity-building#corporate-training" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Corporate Training</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Customized programs for organizations</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/operations/capacity-building#mentorship" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Career Development</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Next generation leadership preparation</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-gold-dark">Diplomacy & International Relations</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/diplomacy">
-                            <div className="mt-4 mb-2 text-lg font-medium text-white">High-Level Forums & Summits</div>
-                            <p className="text-sm leading-tight text-white/90">Facilitating continental dialogues and collaborations</p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <Link to="/operations/diplomacy#stakeholder-engagement" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Stakeholder Engagement</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Public-private sector collaborations</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/operations/diplomacy#international-partnerships" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Global Partnerships</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Strategic international alliances</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-gold">Independent Research Organization</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md" to="/operations/research">
-                            <div className="mt-4 mb-2 text-lg font-medium text-white">Research & Policy Analysis</div>
-                            <p className="text-sm leading-tight text-white/90">Evidence-based solutions for governance challenges</p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <Link to="/operations/research#policy-research" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Policy Research</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Leadership and economic policy analysis</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/operations/research#knowledge-dissemination" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Knowledge Sharing</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Research papers and policy briefs</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/operations/research#advisory-services" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary">
-                          <div className="text-sm font-medium leading-none">Advisory Services</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Institutional recommendations</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/publications" className={navigationMenuTriggerStyle}>Research Publications</Link>
-                </NavigationMenuItem>
+                {navLinks.map((link) => (
+                  <NavigationMenuItem key={link.name}>
+                    {link.children ? (
+                      <>
+                        <NavigationMenuTrigger className="hover:text-gold">{link.name}</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                            {link.children.map((child, index) => (
+                              <li key={child.name} className={index === 0 ? "row-span-3" : ""}>
+                                <NavigationMenuLink asChild>
+                                  <Link className={`flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-primary-dark p-6 no-underline outline-none focus:shadow-md ${index === 0 ? "" : "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary hover:text-primary focus:bg-secondary focus:text-primary"}`} to={child.path}>
+                                    <div className="mt-4 mb-2 text-lg font-medium text-white">{child.name}</div>
+                                    {index === 0 && <p className="text-sm leading-tight text-white/90">Structured learning programs through specialized faculties</p>}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </>
+                    ) : (
+                      <Link to={link.path} className={navigationMenuTriggerStyle}>{link.name}</Link>
+                    )}
+                  </NavigationMenuItem>
+                ))}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
