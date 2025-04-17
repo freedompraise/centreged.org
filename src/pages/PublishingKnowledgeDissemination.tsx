@@ -17,25 +17,25 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Button from '@/components/ui/button';
 import { Hero, ContentSection, CardItem, ListItemWithIcon, CallToAction } from '@/components/PageComponents';
 
-const headerImage = 'https://source.unsplash.com/random/1200x600/?books,library';
+const headerImage = 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200';
 
 const featuredPublications = [
   {
     title: "The Future of African Governance",
     description: "A comprehensive analysis of governance trends and challenges in Africa.",
-    image: "https://source.unsplash.com/random/400x300/?governance,africa",
+    image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
     link: "#"
   },
   {
     title: "Economic Development Strategies for Emerging Markets",
     description: "Strategies for sustainable economic growth in emerging markets.",
-    image: "https://source.unsplash.com/random/400x300/?economic,development",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
     link: "#"
   },
   {
     title: "Leadership in the 21st Century",
     description: "Insights on effective leadership in today's rapidly changing world.",
-    image: "https://source.unsplash.com/random/400x300/?leadership",
+    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
     link: "#"
   }
 ];

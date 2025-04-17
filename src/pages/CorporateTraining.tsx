@@ -21,14 +21,15 @@ import Section from '@/components/ui/Section';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { Hero, ContentSection, CardItem, ListItemWithIcon, CallToAction } from '@/components/PageComponents';
 
-const headerImage = 'https://source.unsplash.com/random/1200x600/?corporate,training';
-const trainingApproachImage = 'https://source.unsplash.com/random/800x600/?workshop,training';
-const subtopicImages = {
-  governance: 'https://source.unsplash.com/random/800x400/?leadership',
-  economic: 'https://source.unsplash.com/random/800x400/?economics',
-  capacity: 'https://source.unsplash.com/random/800x400/?development',
-  sustainability: 'https://source.unsplash.com/random/800x400/?sustainability',
-  technology: 'https://source.unsplash.com/random/800x400/?technology'
+const headerImage = 'https://images.unsplash.com/photo-1581091870621-1c6b2b1aef9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200';
+
+const trainingImages = {
+  approach: 'https://images.unsplash.com/photo-1573164574395-9d1b3f2e1c6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+  governance: 'https://images.unsplash.com/photo-1556742400-b5a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+  economics: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+  sustainability: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+  technology: 'https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+  capacity: 'https://images.unsplash.com/photo-1581091870621-1c6b2b1aef9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'
 };
 
 const CorporateTraining = () => {
@@ -61,7 +62,7 @@ const CorporateTraining = () => {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
-              src={trainingApproachImage} 
+              src={trainingImages.approach} 
               alt="CentreGED Training Approach" 
               className="w-full h-full object-cover"
             />
@@ -172,7 +173,7 @@ const CorporateTraining = () => {
                 </div>
                 <div className="md:col-span-2">
                   <img 
-                    src={subtopicImages.governance} 
+                    src={trainingImages.governance} 
                     alt="Governance & Leadership" 
                     className="w-full rounded-lg shadow-md" 
                   />
@@ -209,7 +210,7 @@ const CorporateTraining = () => {
                 </div>
                 <div className="md:col-span-2">
                   <img 
-                    src={subtopicImages.economic} 
+                    src={trainingImages.economics} 
                     alt="Economic & Policy Training" 
                     className="w-full rounded-lg shadow-md" 
                   />
@@ -246,7 +247,7 @@ const CorporateTraining = () => {
                 </div>
                 <div className="md:col-span-2">
                   <img 
-                    src={subtopicImages.capacity} 
+                    src={trainingImages.capacity} 
                     alt="Institutional Capacity Building" 
                     className="w-full rounded-lg shadow-md" 
                   />
@@ -283,7 +284,7 @@ const CorporateTraining = () => {
                 </div>
                 <div className="md:col-span-2">
                   <img 
-                    src={subtopicImages.sustainability} 
+                    src={trainingImages.sustainability} 
                     alt="Sustainability & Social Impact" 
                     className="w-full rounded-lg shadow-md" 
                   />
@@ -320,7 +321,7 @@ const CorporateTraining = () => {
                 </div>
                 <div className="md:col-span-2">
                   <img 
-                    src={subtopicImages.technology} 
+                    src={trainingImages.technology} 
                     alt="Technology & Innovation" 
                     className="w-full rounded-lg shadow-md" 
                   />

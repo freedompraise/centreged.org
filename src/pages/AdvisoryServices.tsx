@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -259,12 +258,15 @@ const AdvisoryServices = () => {
         </div>
       </ContentSection>
       
-      <CallToAction
-        title="Ready to Transform Policy Challenges into Opportunities?"
-        subtitle="Partner with CentreGED for expert advisory services tailored to your institutional needs."
-        buttonText="Request Consultation"
-        buttonLink="/contact"
-      />
+      <ContentSection
+        title="Transforming Policy Challenges"
+        subtitle="Our advisory services provide actionable insights and capacity-building support for institutions."
+        background="light"
+      >
+        <p className="text-gray-700">
+          CentreGED's advisory services are tailored to address the unique challenges faced by policymakers and institutions. We combine evidence-based research with practical implementation strategies to drive impactful change.
+        </p>
+      </ContentSection>
     </div>
   );
 };

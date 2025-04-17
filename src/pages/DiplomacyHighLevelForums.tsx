@@ -425,8 +425,8 @@ const DiplomacyHighLevelForums = () => {
               ))}
             </CarouselContent>
             <div className="hidden md:flex justify-end gap-2 mt-4">
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious>Previous</CarouselPrevious>
+              <CarouselNext>Next</CarouselNext>
             </div>
           </Carousel>
         </div>

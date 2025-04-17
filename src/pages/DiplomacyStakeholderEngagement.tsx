@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -341,12 +340,15 @@ const DiplomacyStakeholderEngagement = () => {
         </div>
       </ContentSection>
       
-      <CallToAction
-        title="Let's Build Bridges Together"
-        subtitle="Partner with CentreGED to strengthen stakeholder engagement and amplify your policy influence."
-        buttonText="Start a Conversation"
-        buttonLink="/contact"
-      />
+      <ContentSection
+        title="Building Bridges"
+        subtitle="Our stakeholder engagement initiatives foster collaboration and dialogue."
+        background="light"
+      >
+        <p className="text-gray-700">
+          CentreGED's stakeholder engagement programs are designed to connect diverse groups, ensuring inclusive policy development and effective advocacy. By bringing together policymakers, community leaders, and industry experts, we create platforms for meaningful dialogue and collaboration.
+        </p>
+      </ContentSection>
     </div>
   );
 };

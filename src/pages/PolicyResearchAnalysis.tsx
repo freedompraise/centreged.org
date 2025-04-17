@@ -416,13 +416,6 @@ const PolicyResearchAnalysis = () => {
           />
         </div>
       </ContentSection>
-      
-      <CallToAction
-        title="Partner with Us on Research Initiatives"
-        subtitle="Collaborate with CentreGED on policy research projects that drive transformative change."
-        buttonText="Discuss Research Collaboration"
-        buttonLink="/contact"
-      />
     </div>
   );
 };
