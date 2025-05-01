@@ -1,240 +1,120 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  BookOpen, 
-  FileText, 
-  Newspaper, 
-  Book, 
-  Download, 
-  ExternalLink, 
-  Search,
+import React from 'react'
+import { motion } from 'framer-motion'
+import {
+  BookOpen,
+  FileText,
+  Newspaper,
+  Book,
   Globe,
-  MessageSquare,
-  Users,
-  Cpu
-} from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Button from '@/components/ui/button';
-import { Hero, ContentSection, CardItem, ListItemWithIcon, CallToAction } from '@/components/PageComponents';
+  Users
+} from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Hero,
+  ContentSection,
+  CardItem
+} from '@/components/PageComponents'
 
-const headerImage = 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200';
+const scrollIn = {
+  initial: { opacity: 0, y: 50 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 }
+}
 
 const featuredPublications = [
   {
     title: "The Future of African Governance",
     description: "A comprehensive analysis of governance trends and challenges in Africa.",
-    image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-    link: "#"
+    image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
   },
   {
     title: "Economic Development Strategies for Emerging Markets",
     description: "Strategies for sustainable economic growth in emerging markets.",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-    link: "#"
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
   },
   {
     title: "Leadership in the 21st Century",
     description: "Insights on effective leadership in today's rapidly changing world.",
-    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-    link: "#"
+    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
   }
-];
+]
 
 const publicationCategories = [
   {
     title: "Governance",
-    description: "Explore our publications on governance, public policy, and institutional development.",
+    description: "Publications on governance and institutional development.",
     icon: <Globe size={24} />
   },
   {
     title: "Economic Development",
-    description: "Discover research and analysis on economic growth, trade, and investment.",
+    description: "Research on economic growth and investment.",
     icon: <FileText size={24} />
   },
   {
     title: "Leadership",
-    description: "Read about leadership strategies, ethical leadership, and organizational development.",
+    description: "Strategies in leadership and organizational development.",
     icon: <Users size={24} />
   },
   {
     title: "Technology & Innovation",
-    description: "Insights on technology, innovation, and digital transformation.",
-    icon: <Users size={24} />
+    description: "Insights on technology and digital transformation.",
+    icon: <BookOpen size={24} />
   }
-];
+]
+
+
 
 const PublishingKnowledgeDissemination = () => {
   return (
-    <div>
+    <div className="flex flex-col space-y-10">
       <Hero
         title="Knowledge for a Better World"
-        subtitle="Our publications and research reports provide insights and analysis on critical global issues."
-        buttonText="Explore Publications"
-        buttonLink="#publications"
-        backgroundImage={headerImage}
+        subtitle="Our publications provide insights on critical global issues."
+        backgroundImage="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200"
       />
-      
-      <ContentSection
-        title="Featured Publications"
-        subtitle="Explore our latest research and analysis"
-        background="white"
-      >
-        <div className="grid md:grid-cols-3 gap-8">
-          {featuredPublications.map((publication, index) => (
-            <CardItem
-              key={index}
-              title={publication.title}
-              description={publication.description}
-              image={publication.image}
-              link={publication.link}
-            />
-          ))}
-        </div>
-      </ContentSection>
-      
-      <ContentSection
-        title="Publication Categories"
-        subtitle="Browse our publications by category"
-        background="light"
-      >
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {publicationCategories.map((category, index) => (
-            <CardItem
-              key={index}
-              title={category.title}
-              description={category.description}
-              icon={category.icon}
-            />
-          ))}
-        </div>
-      </ContentSection>
-      
-      <ContentSection
-        title="Our Publications"
-        background="white"
-      >
-        <div className="flex flex-col md:flex-row items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-primary">Latest Publications</h2>
-          <div className="flex items-center">
-            <input
-              type="text"
-              placeholder="Search publications..."
-              className="border border-gray-300 rounded-md px-4 py-2 mr-2"
-            />
-            <Button variant="outline">
-              <Search className="mr-2" />
-              Search
-            </Button>
-          </div>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-white shadow-md hover:shadow-lg transition-all">
-            <CardHeader>
-              <CardTitle className="text-xl">
-                <BookOpen className="mr-2 inline-block" />
-                The Impact of Technology on Education
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                Explore the transformative effects of technology on education systems worldwide.
-              </p>
-              <div className="flex justify-between">
-                <Button variant="outline" size="sm">
-                  <FileText className="mr-2" />
-                  Read More
-                </Button>
-                <Button variant="primary" size="sm">
-                  <Download className="mr-2" />
-                  Download
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-white shadow-md hover:shadow-lg transition-all">
-            <CardHeader>
-              <CardTitle className="text-xl">
-                <Newspaper className="mr-2 inline-block" />
-                Global Economic Trends 2024
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                An in-depth analysis of the key economic trends shaping the global landscape in 2024.
-              </p>
-              <div className="flex justify-between">
-                <Button variant="outline" size="sm">
-                  <FileText className="mr-2" />
-                  Read More
-                </Button>
-                <Button variant="primary" size="sm">
-                  <Download className="mr-2" />
-                  Download
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-white shadow-md hover:shadow-lg transition-all">
-            <CardHeader>
-              <CardTitle className="text-xl">
-                <Book className="mr-2 inline-block" />
-                Sustainable Development Goals: Progress and Challenges
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                A critical assessment of the progress made towards achieving the Sustainable Development Goals.
-              </p>
-              <div className="flex justify-between">
-                <Button variant="outline" size="sm">
-                  <FileText className="mr-2" />
-                  Read More
-                </Button>
-                <Button variant="primary" size="sm">
-                  <Download className="mr-2" />
-                  Download
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-          
-           <Card className="bg-white shadow-md hover:shadow-lg transition-all">
-            <CardHeader>
-              <CardTitle className="text-xl">
-                <Book className="mr-2 inline-block" />
-                The Future of Work
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-               Overview and insights into the future of work.
-              </p>
-              <div className="flex justify-between">
-                <Button variant="outline" size="sm">
-                  <FileText className="mr-2" />
-                  Read More
-                </Button>
-                <Button variant="primary" size="sm">
-                  <Download className="mr-2" />
-                  Download
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </ContentSection>
-      
-      <CallToAction
-        title="Stay Informed with Our Publications"
-        subtitle="Access the latest research and analysis from CentreGED."
-        buttonText="Browse All Publications"
-        buttonLink="/publications"
-      />
-    </div>
-  );
-};
 
-export default PublishingKnowledgeDissemination;
+      <motion.div {...scrollIn}>
+        <ContentSection
+          title="Featured Publications"
+          subtitle="Our latest research and analysis"
+          background="white"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredPublications.map((pub, i) => (
+              <CardItem
+                key={i}
+                title={pub.title}
+                description={pub.description}
+                image={pub.image}
+              />
+            ))}
+          </div>
+        </ContentSection>
+      </motion.div>
+
+      <motion.div {...scrollIn}>
+        <ContentSection
+          title="Publication Categories"
+          subtitle="Browse by category"
+          background="light"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {publicationCategories.map((cat, i) => (
+              <CardItem
+                key={i}
+                title={cat.title}
+                description={cat.description}
+                icon={cat.icon}
+              />
+            ))}
+          </div>
+        </ContentSection>
+      </motion.div>
+
+
+    </div>
+  )
+}
+
+export default PublishingKnowledgeDissemination
