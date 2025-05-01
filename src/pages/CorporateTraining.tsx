@@ -1,445 +1,361 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Award, 
-  Users, 
-  Target, 
-  CheckCircle, 
-  GraduationCap, 
-  Building, 
-  Leaf, 
-  Cpu, 
-  MonitorSmartphone, 
-  Video, 
-  Calendar,
+import {
+  Award,
+  Users,
+  Target,
+  CheckCircle,
+  GraduationCap,
+  Building,
+  Leaf,
+  Cpu,
+  MonitorSmartphone,
   PenTool,
-  Globe
-} from 'lucide-react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Section from '@/components/ui/Section';
-import SectionTitle from '@/components/ui/SectionTitle';
-import { Hero, ContentSection, CardItem, ListItemWithIcon, CallToAction } from '@/components/PageComponents';
-
-const headerImage = 'https://images.unsplash.com/photo-1581091870621-1c6b2b1aef9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200';
-
-const trainingImages = {
-  approach: 'https://images.unsplash.com/photo-1573164574395-9d1b3f2e1c6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-  governance: 'https://images.unsplash.com/photo-1556742400-b5a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-  economics: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-  sustainability: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-  technology: 'https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-  capacity: 'https://images.unsplash.com/photo-1581091870621-1c6b2b1aef9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'
-};
+  Globe,
+  Calendar
+} from 'lucide-react'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Hero,
+  ContentSection,
+  CardItem,
+  ListItemWithIcon,
+  CallToAction
+} from '@/components/PageComponents'
 
 const CorporateTraining = () => {
   return (
-    <div>
+    <div className="flex flex-col space-y-12">
       <Hero
         title="Corporate & Institutional Training"
-        subtitle="Building capacity for excellence in governance, economic management, and institutional leadership."
+        backgroundImage='https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'
+        subtitle="Building capacity for excellence in governance and leadership."
         buttonText="Request Training Information"
         buttonLink="/contact"
-        backgroundImage={headerImage}
       />
-      
+
       <ContentSection
         title="Excellence Through Continuous Learning"
         subtitle="Our training philosophy and approach"
         background="white"
       >
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-gray-700 mb-6">
-              At CentreGED, we recognize that continuous capacity building is essential for excellence in governance, economic management, and institutional leadership. Our training programs are designed to equip organizations and their teams with the knowledge, skills, and tools needed to navigate complex challenges and drive sustainable success.
-            </p>
-            <p className="text-gray-700 mb-6">
-              Our approach is research-driven, practical, and results-oriented. We combine theoretical frameworks with real-world case studies, interactive exercises, and expert facilitation to ensure participants acquire both conceptual understanding and applicable skills.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <p className="text-gray-700">
+              Continuous capacity building drives excellence in institutions.
             </p>
             <p className="text-gray-700">
-              Each training program is developed by leading experts and experienced practitioners, and can be customized to address the specific needs, challenges, and contexts of your organization.
+              We blend theory, case studies, and interactive exercises.
             </p>
-          </div>
-          <div className="rounded-lg overflow-hidden shadow-xl">
-            <img 
-              src={trainingImages.approach} 
-              alt="CentreGED Training Approach" 
-              className="w-full h-full object-cover"
-            />
+            <p className="text-gray-700">
+              Programs are customized to your organization’s unique context.
+            </p>
           </div>
         </div>
       </ContentSection>
-      
+
       <ContentSection
         title="Who We Serve"
         subtitle="Tailored training solutions for diverse organizations"
         background="light"
-        centered={true}
+        centered
       >
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          <Card className="bg-white shadow-md hover:shadow-lg transition-all">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="shadow-md hover:shadow-lg transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Building className="h-6 w-6 text-primary" />
-                <span>Public Sector Institutions</span>
+                <Building size={24} />
+                Public Sector Institutions
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-4">
-                Specialized training for government ministries, departments, agencies, and local authorities to enhance public service delivery and policy implementation.
+                Specialized programs for ministries and agencies to enhance service delivery.
               </p>
               <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Civil service leadership development</li>
-                <li>Policy formulation and analysis</li>
-                <li>Public financial management</li>
-                <li>Digital government transformation</li>
+                <li>Civil service leadership</li>
+                <li>Policy formulation</li>
+                <li>Financial management</li>
+                <li>Digital transformation</li>
               </ul>
             </CardContent>
           </Card>
-          
-          <Card className="bg-white shadow-md hover:shadow-lg transition-all">
+
+          <Card className="shadow-md hover:shadow-lg transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Users className="h-6 w-6 text-primary" />
-                <span>Private Sector Organizations</span>
+                <Users size={24} />
+                Private Sector Organizations
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-4">
-                Corporate training programs that strengthen leadership, improve governance practices, and enhance understanding of policy environments for business growth.
+                Strengthening leadership and governance practices in businesses.
               </p>
               <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Corporate governance excellence</li>
-                <li>Strategic planning and execution</li>
-                <li>Policy navigation and advocacy</li>
-                <li>ESG implementation and reporting</li>
+                <li>Corporate governance</li>
+                <li>Strategic planning</li>
+                <li>Policy advocacy</li>
+                <li>ESG reporting</li>
               </ul>
             </CardContent>
           </Card>
-          
-          <Card className="bg-white shadow-md hover:shadow-lg transition-all">
+
+          <Card className="shadow-md hover:shadow-lg transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Globe className="h-6 w-6 text-primary" />
-                <span>International Organizations</span>
+                <Globe size={24} />
+                International Organizations
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-4">
-                Capacity building for multilateral institutions, development agencies, and non-governmental organizations working on governance and economic development.
+                Capacity building for development agencies and NGOs.
               </p>
               <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Program design and management</li>
-                <li>Context-specific intervention strategies</li>
-                <li>Monitoring, evaluation, and learning</li>
+                <li>Program design</li>
+                <li>Intervention strategies</li>
+                <li>Monitoring and evaluation</li>
                 <li>Cross-cultural collaboration</li>
               </ul>
             </CardContent>
           </Card>
         </div>
       </ContentSection>
-      
+
       <ContentSection
         title="Training Areas"
         subtitle="Comprehensive programs addressing key competency needs"
         background="white"
       >
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="space-y-4">
           <AccordionItem value="governance">
-            <AccordionTrigger className="text-xl font-semibold text-primary hover:no-underline">
-              <div className="flex items-center">
-                <Award className="mr-3 h-6 w-6" />
-                Governance & Leadership Development
-              </div>
+            <AccordionTrigger className="flex items-center text-xl font-semibold text-primary">
+              <Award size={24} className="mr-3" />
+              Governance & Leadership
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 pt-4">
-              <div className="grid md:grid-cols-5 gap-6">
-                <div className="md:col-span-3">
-                  <p className="mb-4">
-                    Our governance and leadership programs develop the knowledge, skills, and ethical foundations needed for effective organizational leadership and sound governance practices.
-                  </p>
-                  <h4 className="font-bold text-primary mb-2">Training Modules:</h4>
-                  <ul className="list-disc pl-6 space-y-2 mb-6">
-                    <li>Ethical Leadership and Decision-Making</li>
-                    <li>Board Effectiveness and Governance Best Practices</li>
-                    <li>Strategic Vision and Organizational Alignment</li>
-                    <li>Public Sector Leadership Excellence</li>
-                    <li>Accountability Systems and Transparency Frameworks</li>
-                    <li>Change Management and Organizational Transformation</li>
-                  </ul>
-                  <p>
-                    These modules can be delivered as standalone workshops or combined into comprehensive leadership development programs tailored to your organization's specific needs.
-                  </p>
-                </div>
-                <div className="md:col-span-2">
-                  <img 
-                    src={trainingImages.governance} 
-                    alt="Governance & Leadership" 
-                    className="w-full rounded-lg shadow-md" 
-                  />
-                </div>
-              </div>
+            <AccordionContent className="space-y-4 text-gray-700">
+              <p>
+                Programs develop skills and ethics for effective leadership.
+              </p>
+              <h4 className="font-bold">Modules include:</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Ethical decision-making</li>
+                <li>Board effectiveness</li>
+                <li>Strategic vision</li>
+                <li>Change management</li>
+              </ul>
             </AccordionContent>
           </AccordionItem>
-          
+
           <AccordionItem value="economic">
-            <AccordionTrigger className="text-xl font-semibold text-primary hover:no-underline">
-              <div className="flex items-center">
-                <Target className="mr-3 h-6 w-6" />
-                Economic & Policy Training
-              </div>
+            <AccordionTrigger className="flex items-center text-xl font-semibold text-primary">
+              <Target size={24} className="mr-3" />
+              Economic & Policy
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 pt-4">
-              <div className="grid md:grid-cols-5 gap-6">
-                <div className="md:col-span-3">
-                  <p className="mb-4">
-                    Our economic and policy training programs provide practical tools and frameworks for understanding, analyzing, and implementing effective economic policies and strategies.
-                  </p>
-                  <h4 className="font-bold text-primary mb-2">Training Modules:</h4>
-                  <ul className="list-disc pl-6 space-y-2 mb-6">
-                    <li>Public Financial Management and Budgeting</li>
-                    <li>Economic Policy Analysis and Evaluation</li>
-                    <li>Fiscal Policy and Domestic Resource Mobilization</li>
-                    <li>Trade and Investment Promotion Strategies</li>
-                    <li>Monetary Policy and Financial Sector Development</li>
-                    <li>Economic Statistics and Data Analysis for Decision-Making</li>
-                  </ul>
-                  <p>
-                    These programs are designed for finance ministries, central banks, planning agencies, and other institutions involved in economic policy formulation and implementation.
-                  </p>
-                </div>
-                <div className="md:col-span-2">
-                  <img 
-                    src={trainingImages.economics} 
-                    alt="Economic & Policy Training" 
-                    className="w-full rounded-lg shadow-md" 
-                  />
-                </div>
-              </div>
+            <AccordionContent className="space-y-4 text-gray-700">
+              <p>
+                Practical tools for analyzing and implementing economic policies.
+              </p>
+              <h4 className="font-bold">Modules include:</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Budgeting and PFM</li>
+                <li>Policy analysis</li>
+                <li>Fiscal management</li>
+                <li>Trade promotion</li>
+              </ul>
             </AccordionContent>
           </AccordionItem>
-          
+
           <AccordionItem value="capacity">
-            <AccordionTrigger className="text-xl font-semibold text-primary hover:no-underline">
-              <div className="flex items-center">
-                <Building className="mr-3 h-6 w-6" />
-                Institutional Capacity Building
-              </div>
+            <AccordionTrigger className="flex items-center text-xl font-semibold text-primary">
+              <Building size={24} className="mr-3" />
+              Institutional Capacity
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 pt-4">
-              <div className="grid md:grid-cols-5 gap-6">
-                <div className="md:col-span-3">
-                  <p className="mb-4">
-                    Our institutional capacity building programs strengthen the systems, processes, and capabilities needed for effective organizational performance and sustainable results.
-                  </p>
-                  <h4 className="font-bold text-primary mb-2">Training Modules:</h4>
-                  <ul className="list-disc pl-6 space-y-2 mb-6">
-                    <li>Organizational Development and Structure Optimization</li>
-                    <li>Strategic Planning and Implementation</li>
-                    <li>Project Management and Results Delivery</li>
-                    <li>Monitoring, Evaluation, and Learning Systems</li>
-                    <li>Knowledge Management and Institutional Memory</li>
-                    <li>HR Systems and Talent Development Frameworks</li>
-                  </ul>
-                  <p>
-                    These programs help organizations build the internal capacity needed to achieve their mandates and strategic objectives effectively and efficiently.
-                  </p>
-                </div>
-                <div className="md:col-span-2">
-                  <img 
-                    src={trainingImages.capacity} 
-                    alt="Institutional Capacity Building" 
-                    className="w-full rounded-lg shadow-md" 
-                  />
-                </div>
-              </div>
+            <AccordionContent className="space-y-4 text-gray-700">
+              <p>
+                Strengthening systems and processes for performance.
+              </p>
+              <h4 className="font-bold">Modules include:</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Organizational development</li>
+                <li>Project management</li>
+                <li>Monitoring systems</li>
+                <li>Talent development</li>
+              </ul>
             </AccordionContent>
           </AccordionItem>
-          
+
           <AccordionItem value="sustainability">
-            <AccordionTrigger className="text-xl font-semibold text-primary hover:no-underline">
-              <div className="flex items-center">
-                <Leaf className="mr-3 h-6 w-6" />
-                Sustainability & Social Impact
-              </div>
+            <AccordionTrigger className="flex items-center text-xl font-semibold text-primary">
+              <Leaf size={24} className="mr-3" />
+              Sustainability & Impact
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 pt-4">
-              <div className="grid md:grid-cols-5 gap-6">
-                <div className="md:col-span-3">
-                  <p className="mb-4">
-                    Our sustainability programs equip organizations with the knowledge and tools to integrate environmental, social, and governance considerations into their strategies and operations.
-                  </p>
-                  <h4 className="font-bold text-primary mb-2">Training Modules:</h4>
-                  <ul className="list-disc pl-6 space-y-2 mb-6">
-                    <li>ESG Strategy Development and Implementation</li>
-                    <li>Corporate Social Responsibility and Shared Value</li>
-                    <li>Sustainable Development Goals Integration</li>
-                    <li>Climate Action Planning and Carbon Management</li>
-                    <li>Social Impact Measurement and Reporting</li>
-                    <li>Stakeholder Engagement and Community Relations</li>
-                  </ul>
-                  <p>
-                    These programs help organizations enhance their social license to operate while contributing to sustainable development objectives.
-                  </p>
-                </div>
-                <div className="md:col-span-2">
-                  <img 
-                    src={trainingImages.sustainability} 
-                    alt="Sustainability & Social Impact" 
-                    className="w-full rounded-lg shadow-md" 
-                  />
-                </div>
-              </div>
+            <AccordionContent className="space-y-4 text-gray-700">
+              <p>
+                Integrating ESG and social impact into strategy.
+              </p>
+              <h4 className="font-bold">Modules include:</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>ESG strategy</li>
+                <li>CSR and shared value</li>
+                <li>Climate planning</li>
+                <li>Impact measurement</li>
+              </ul>
             </AccordionContent>
           </AccordionItem>
-          
+
           <AccordionItem value="technology">
-            <AccordionTrigger className="text-xl font-semibold text-primary hover:no-underline">
-              <div className="flex items-center">
-                <Cpu className="mr-3 h-6 w-6" />
-                Technology & Innovation in Governance
-              </div>
+            <AccordionTrigger className="flex items-center text-xl font-semibold text-primary">
+              <Cpu size={24} className="mr-3" />
+              Technology & Innovation
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 pt-4">
-              <div className="grid md:grid-cols-5 gap-6">
-                <div className="md:col-span-3">
-                  <p className="mb-4">
-                    Our technology and innovation programs help organizations harness digital solutions and innovative approaches to enhance governance, service delivery, and operational efficiency.
-                  </p>
-                  <h4 className="font-bold text-primary mb-2">Training Modules:</h4>
-                  <ul className="list-disc pl-6 space-y-2 mb-6">
-                    <li>Digital Transformation Strategy and Implementation</li>
-                    <li>E-Government and Digital Public Services</li>
-                    <li>Data-Driven Decision Making and Analytics</li>
-                    <li>AI Applications in Governance and Management</li>
-                    <li>Innovation Management and Organizational Agility</li>
-                    <li>Digital Ethics and Responsible Technology Use</li>
-                  </ul>
-                  <p>
-                    These programs prepare organizations to leverage technology effectively while managing associated risks and challenges.
-                  </p>
-                </div>
-                <div className="md:col-span-2">
-                  <img 
-                    src={trainingImages.technology} 
-                    alt="Technology & Innovation" 
-                    className="w-full rounded-lg shadow-md" 
-                  />
-                </div>
-              </div>
+            <AccordionContent className="space-y-4 text-gray-700">
+              <p>
+                Leveraging digital solutions for governance efficiency.
+              </p>
+              <h4 className="font-bold">Modules include:</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Digital transformation</li>
+                <li>Data-driven analytics</li>
+                <li>AI applications</li>
+                <li>Responsible tech use</li>
+              </ul>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
       </ContentSection>
-      
+
       <ContentSection
         title="Training Formats"
-        subtitle="Flexible delivery options to meet your organizational needs"
+        subtitle="Flexible delivery options"
         background="light"
       >
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <CardItem 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <CardItem
             title="On-Site Training"
-            description="Delivered at your premises or preferred location, tailored to your organizational context and culture."
+            description="Delivered at your premises, tailored to your context."
             icon={<Building size={24} />}
           />
-          <CardItem 
+          <CardItem
             title="Virtual Training"
-            description="Interactive online sessions using state-of-the-art digital learning platforms and collaborative tools."
+            description="Interactive online sessions with collaborative tools."
             icon={<MonitorSmartphone size={24} />}
           />
-          <CardItem 
+          <CardItem
             title="Customized Workshops"
-            description="Focused sessions addressing specific challenges or competency needs identified by your organization."
+            description="Focused sessions addressing specific challenges."
             icon={<PenTool size={24} />}
           />
-          <CardItem 
+          <CardItem
             title="Executive Retreats"
-            description="Immersive learning experiences for leadership teams, combining training with strategic planning."
+            description="Immersive learning experiences for leadership teams."
             icon={<Users size={24} />}
           />
         </div>
       </ContentSection>
-      
+
       <ContentSection
         title="Why Choose CentreGED"
-        subtitle="What sets our training programs apart"
+        subtitle="What sets our programs apart"
         background="white"
-        centered={true}
+        centered
       >
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <ListItemWithIcon
             icon={<GraduationCap size={24} />}
-            title="Expert-Led Training"
-            description="Programs facilitated by seasoned academics, industry professionals, and policy experts with extensive practical experience."
+            title="Expert-Led"
+            description="Facilitated by seasoned academics and industry experts."
           />
           <ListItemWithIcon
             icon={<Target size={24} />}
             title="Tailored Solutions"
-            description="Customized content, case studies, and exercises designed specifically for your organization's context and challenges."
+            description="Content and exercises customized for your needs."
           />
           <ListItemWithIcon
             icon={<Globe size={24} />}
             title="Global Perspective"
-            description="Training that incorporates international best practices while remaining relevant to African realities and contexts."
+            description="International best practices applied locally."
           />
           <ListItemWithIcon
             icon={<CheckCircle size={24} />}
-            title="Practical Application"
-            description="Focus on actionable insights and implementable solutions that participants can apply immediately to their work."
+            title="Practical Focus"
+            description="Actionable insights for immediate application."
           />
           <ListItemWithIcon
             icon={<Users size={24} />}
-            title="Collaborative Approach"
-            description="Programs that foster peer learning, networking, and knowledge sharing among participants."
+            title="Collaborative"
+            description="Peer learning and networking opportunities."
           />
           <ListItemWithIcon
             icon={<Calendar size={24} />}
             title="Flexible Scheduling"
-            description="Training calendars designed to accommodate your organizational timetable and operational needs."
+            description="Training calendars that fit your timeline."
           />
         </div>
       </ContentSection>
-      
-      <ContentSection
-        title="Our Training Process"
-        background="light"
-      >
+
+      <ContentSection title="Our Training Process" background="light">
         <div className="flex flex-col md:flex-row gap-4 justify-between max-w-4xl mx-auto">
-          <div className="text-center p-6 rounded-lg bg-white shadow-md">
-            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-            <h3 className="text-lg font-bold text-primary mb-2">Needs Assessment</h3>
-            <p className="text-gray-600">Identifying specific training requirements and organizational goals</p>
+          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
+              1
+            </div>
+            <h3 className="text-lg font-bold text-primary mb-2">
+              Needs Assessment
+            </h3>
+            <p className="text-gray-600">
+              Identifying training requirements and goals
+            </p>
           </div>
-          
-          <div className="text-center p-6 rounded-lg bg-white shadow-md">
-            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-            <h3 className="text-lg font-bold text-primary mb-2">Program Design</h3>
-            <p className="text-gray-600">Creating customized curriculum and learning activities</p>
+          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
+              2
+            </div>
+            <h3 className="text-lg font-bold text-primary mb-2">
+              Program Design
+            </h3>
+            <p className="text-gray-600">
+              Crafting customized curriculum and activities
+            </p>
           </div>
-          
-          <div className="text-center p-6 rounded-lg bg-white shadow-md">
-            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-            <h3 className="text-lg font-bold text-primary mb-2">Delivery</h3>
-            <p className="text-gray-600">Expert facilitation using interactive and engaging methods</p>
+          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
+              3
+            </div>
+            <h3 className="text-lg font-bold text-primary mb-2">
+              Delivery
+            </h3>
+            <p className="text-gray-600">
+              Expert facilitation with interactive methods
+            </p>
           </div>
-          
-          <div className="text-center p-6 rounded-lg bg-white shadow-md">
-            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
-            <h3 className="text-lg font-bold text-primary mb-2">Follow-Up</h3>
-            <p className="text-gray-600">Impact assessment and ongoing implementation support</p>
+          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
+              4
+            </div>
+            <h3 className="text-lg font-bold text-primary mb-2">
+              Follow-Up
+            </h3>
+            <p className="text-gray-600">
+              Impact assessment and ongoing support
+            </p>
           </div>
         </div>
       </ContentSection>
-      
+
       <CallToAction
         title="Ready to Transform Your Organization?"
-        subtitle="Partner with CentreGED to develop customized training programs that build capacity and drive excellence."
-        buttonText="Request Training Consultation"
+        subtitle="Partner with CentreGED for customized training."
+        buttonText="Request Consultation"
         buttonLink="/contact"
       />
     </div>
-  );
-};
+  )
+}
 
-export default CorporateTraining;
+export default CorporateTraining
