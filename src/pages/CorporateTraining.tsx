@@ -34,8 +34,6 @@ const CorporateTraining = () => {
         title="Corporate & Institutional Training"
         backgroundImage='https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'
         subtitle="Building capacity for excellence in governance and leadership."
-        buttonText="Request Training Information"
-        buttonLink="/contact"
       />
 
       <ContentSection
@@ -348,12 +346,6 @@ const CorporateTraining = () => {
         </div>
       </ContentSection>
 
-      <CallToAction
-        title="Ready to Transform Your Organization?"
-        subtitle="Partner with CentreGED for customized training."
-        buttonText="Request Consultation"
-        buttonLink="/contact"
-      />
     </div>
   )
 }

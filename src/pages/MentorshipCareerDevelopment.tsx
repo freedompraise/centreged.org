@@ -38,8 +38,6 @@ const MentorshipCareerDevelopment = () => {
         title="Mentorship & Career Development"
         backgroundImage='https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'
         subtitle="Empowering Africa's next generation of leaders."
-        buttonText="Apply for Mentorship"
-        buttonLink="/contact"
       />
 
       <motion.div {...scrollIn}>
@@ -212,12 +210,6 @@ const MentorshipCareerDevelopment = () => {
         </ContentSection>
       </motion.div>
 
-      <CallToAction
-        title="Ready to Accelerate Your Journey?"
-        subtitle="Apply today and achieve your career goals."
-        buttonText="Apply Now"
-        buttonLink="/contact"
-      />
     </div>
   )
 }

@@ -45,8 +45,6 @@ const DiplomacyStakeholderEngagement = () => {
       backgroundImage='https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'
         title="Stakeholder Engagement & Policy Advocacy"
         subtitle="Building bridges to drive inclusive policy."
-        buttonText="Partner With Us"
-        buttonLink="/contact"
       />
 
       <motion.div {...scrollIn}>
