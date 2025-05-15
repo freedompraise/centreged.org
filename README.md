@@ -1,69 +1,71 @@
-# Welcome to your Lovable project
+**Project Title: Centre GED Website**
 
-## Project info
+**Description**  
+The Centre GED Website is a web application designed to provide resources and information related to the General Educational Development (GED) program. It aims to support users in their educational journey by offering a user-friendly interface and essential tools.
 
-**URL**: https://lovable.dev/projects/c8e057ff-f825-4864-ba14-75c6af970848
+**Table of Contents**  
+- [Features](#features)  
+- [Technologies Used](#technologies-used)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-## How can I edit this code?
+**Features**  
+- Responsive design for accessibility on various devices  
+- Built with modern web technologies for a seamless user experience  
+- Integration of educational resources and tools for GED preparation  
 
-There are several ways of editing your application.
+**Technologies Used**  
+- **Vite**: A build tool that provides a fast development environment  
+- **TypeScript**: A typed superset of JavaScript for building robust applications  
+- **React**: A JavaScript library for building user interfaces  
+- **shadcn-ui**: A component library for building UI elements  
+- **Tailwind CSS**: A utility-first CSS framework for styling  
 
-**Use Lovable**
+**Installation**  
+To set up the project locally, follow these steps:  
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/freedompraise/centre-ged-website.git  
+   ```  
+2. Navigate to the project directory:  
+   ```bash  
+   cd centre-ged-website  
+   ```  
+3. Install the necessary dependencies:  
+   ```bash  
+   npm install  
+   ```  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c8e057ff-f825-4864-ba14-75c6af970848) and start prompting.
+**Usage**  
+- Start the development server with auto-reloading:  
+   ```bash  
+   npm run dev  
+   ```  
+- Open your web browser and navigate to `http://localhost:3000` (or the specified port) to view the application.  
 
-Changes made via Lovable will be committed automatically to this repo.
+**Contributing**  
+Contributions are welcome! Please follow these steps:  
+1. Fork the repository.  
+2. Create a new branch:  
+   ```bash  
+   git checkout -b feature/YourFeatureName  
+   ```  
+3. Make your changes and commit them:  
+   ```bash  
+   git commit -m "Add some feature"  
+   ```  
+4. Push to the branch:  
+   ```bash  
+   git push origin feature/YourFeatureName  
+   ```  
+5. Open a pull request.  
 
-**Use your preferred IDE**
+**License**  
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Contact**  
+For more information, visit [centreged.org](http://centreged.org).  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/c8e057ff-f825-4864-ba14-75c6af970848) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Feel free to reach out for any questions or suggestions!
