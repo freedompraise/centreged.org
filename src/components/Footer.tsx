@@ -61,13 +61,7 @@ const Footer = () => {
                     +2347083868130
                   </a>
                 </li>
-                <li>
-                  Address:
-                  <br />
-                  Entrepreneurship Village Annex (Africa's Silicon Valley)
-                  <br />
-                  16 Adeola Hopewell, Victoria Island, Lagos
-                </li>
+              
               </ul>
             </div>
           </div>
