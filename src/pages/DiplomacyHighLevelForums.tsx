@@ -1,5 +1,4 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import {
   Calendar,
   Users,
@@ -7,59 +6,51 @@ import {
   Globe,
   GraduationCap,
   FileText,
-  Building
-} from 'lucide-react'
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger
-} from '@/components/ui/tabs'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
+  Building,
+} from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Hero,
   ContentSection,
-  ListItemWithIcon
-} from '@/components/PageComponents'
+  ListItemWithIcon,
+} from '@/components/PageComponents';
 
 const scrollIn = {
   initial: { opacity: 0, y: 50 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6 }
-}
+  transition: { duration: 0.6 },
+};
 
 const DiplomacyHighLevelForums = () => {
   const pastEvents = [
     {
-      title: "Africa Economic Forum 2024",
-      date: "September 15-17, 2024",
-      location: "Kigali, Rwanda",
-      description: "Focused on ‘Digital Transformation for Economic Resilience’."
+      title: 'Africa Economic Forum 2024',
+      date: 'September 15-17, 2024',
+      location: 'Kigali, Rwanda',
+      description:
+        'Focused on ‘Digital Transformation for Economic Resilience’.',
     },
     {
-      title: "National Economic Forum 2024",
-      date: "June 8-9, 2024",
-      location: "Abuja, Nigeria",
-      description: "Centered on ‘Sustainable Financial Systems for Inclusive Growth.’"
+      title: 'National Economic Forum 2024',
+      date: 'June 8-9, 2024',
+      location: 'Abuja, Nigeria',
+      description:
+        'Centered on ‘Sustainable Financial Systems for Inclusive Growth.’',
     },
     {
-      title: "National Leadership Colloquium 2023",
-      date: "November 22-24, 2023",
-      location: "Nairobi, Kenya",
-      description: "Explored ‘Ethical Leadership in the Digital Age.’"
-    }
-  ]
+      title: 'National Leadership Colloquium 2023',
+      date: 'November 22-24, 2023',
+      location: 'Nairobi, Kenya',
+      description: 'Explored ‘Ethical Leadership in the Digital Age.’',
+    },
+  ];
 
   return (
     <div className="flex flex-col space-y-12">
       <Hero
-      backgroundImage='https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'
+        backgroundImage="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200"
         title="Shaping Africa's Future Through Dialogue"
         subtitle="Premier forums convening stakeholders to drive progress."
       />
@@ -71,7 +62,9 @@ const DiplomacyHighLevelForums = () => {
           background="white"
         >
           <p className="max-w-3xl mx-left text-gray-700">
-            CentreGED hosts high-level forums that unite policymakers, business executives, academics, and civil society to deliberate on governance, economic development, and leadership across Africa.
+            CentreGED hosts high-level forums that unite policymakers, business
+            executives, academics, and civil society to deliberate on
+            governance, economic development, and leadership across Africa.
           </p>
         </ContentSection>
       </motion.div>
@@ -86,7 +79,9 @@ const DiplomacyHighLevelForums = () => {
             <TabsList className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-6 text-sm">
               <TabsTrigger value="aef">Africa Economic Forum</TabsTrigger>
               <TabsTrigger value="nef">National Economic Forum</TabsTrigger>
-              <TabsTrigger value="nlc">National Leadership Colloquium</TabsTrigger>
+              <TabsTrigger value="nlc">
+                National Leadership Colloquium
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="aef" className="space-y-4">
@@ -94,7 +89,8 @@ const DiplomacyHighLevelForums = () => {
                 Africa Economic Forum (AEF)
               </h3>
               <p className="text-gray-700">
-                Continental summit positioning Africa as a global economic leader.
+                Continental summit positioning Africa as a global economic
+                leader.
               </p>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <Card>
@@ -104,7 +100,8 @@ const DiplomacyHighLevelForums = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-gray-700 text-sm">
-                    Finance ministers, central bank governors, business executives, and development partners.
+                    Finance ministers, central bank governors, business
+                    executives, and development partners.
                   </CardContent>
                 </Card>
                 <Card>
@@ -114,7 +111,8 @@ const DiplomacyHighLevelForums = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-gray-700 text-sm">
-                    Economic integration, digital economy, sustainable development, and public-private partnerships.
+                    Economic integration, digital economy, sustainable
+                    development, and public-private partnerships.
                   </CardContent>
                 </Card>
               </div>
@@ -135,7 +133,8 @@ const DiplomacyHighLevelForums = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-gray-700 text-sm">
-                    Policy recommendations, reform frameworks, and investment plans.
+                    Policy recommendations, reform frameworks, and investment
+                    plans.
                   </CardContent>
                 </Card>
                 <Card>
@@ -145,7 +144,8 @@ const DiplomacyHighLevelForums = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-gray-700 text-sm">
-                    Panel discussions, breakout sessions, and public-private dialogues.
+                    Panel discussions, breakout sessions, and public-private
+                    dialogues.
                   </CardContent>
                 </Card>
               </div>
@@ -156,7 +156,8 @@ const DiplomacyHighLevelForums = () => {
                 National Leadership Colloquium (NLC)
               </h3>
               <p className="text-gray-700">
-                Intensive forum on ethics, strategic management, and leadership best practices.
+                Intensive forum on ethics, strategic management, and leadership
+                best practices.
               </p>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <Card>
@@ -166,7 +167,8 @@ const DiplomacyHighLevelForums = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-gray-700 text-sm">
-                    Ethical leadership, strategic planning, AI in governance, and youth leadership.
+                    Ethical leadership, strategic planning, AI in governance,
+                    and youth leadership.
                   </CardContent>
                 </Card>
                 <Card>
@@ -176,7 +178,8 @@ const DiplomacyHighLevelForums = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-gray-700 text-sm">
-                    Senior officials, executives, civil society leaders, and emerging professionals.
+                    Senior officials, executives, civil society leaders, and
+                    emerging professionals.
                   </CardContent>
                 </Card>
               </div>
@@ -213,7 +216,8 @@ const DiplomacyHighLevelForums = () => {
                 <CardTitle className="text-base">Collaboration</CardTitle>
               </CardHeader>
               <CardContent className="text-gray-700 text-sm">
-                Networking opportunities leading to partnerships and investments.
+                Networking opportunities leading to partnerships and
+                investments.
               </CardContent>
             </Card>
           </div>
@@ -247,7 +251,7 @@ const DiplomacyHighLevelForums = () => {
         </ContentSection>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default DiplomacyHighLevelForums
+export default DiplomacyHighLevelForums;

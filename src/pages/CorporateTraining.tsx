@@ -10,29 +10,29 @@ import {
   MonitorSmartphone,
   PenTool,
   Globe,
-  Calendar
-} from 'lucide-react'
+  Calendar,
+} from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Hero,
   ContentSection,
   CardItem,
   ListItemWithIcon,
-  CallToAction
-} from '@/components/PageComponents'
+  CallToAction,
+} from '@/components/PageComponents';
 
 const CorporateTraining = () => {
   return (
     <div className="flex flex-col space-y-12">
       <Hero
         title="Corporate & Institutional Training"
-        backgroundImage='https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'
+        backgroundImage="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200"
         subtitle="Building capacity for excellence in governance and leadership."
       />
 
@@ -72,7 +72,8 @@ const CorporateTraining = () => {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-4">
-                Specialized programs for ministries and agencies to enhance service delivery.
+                Specialized programs for ministries and agencies to enhance
+                service delivery.
               </p>
               <ul className="list-disc pl-6 space-y-1 text-gray-700">
                 <li>Civil service leadership</li>
@@ -157,7 +158,8 @@ const CorporateTraining = () => {
             </AccordionTrigger>
             <AccordionContent className="space-y-4 text-gray-700">
               <p>
-                Practical tools for analyzing and implementing economic policies.
+                Practical tools for analyzing and implementing economic
+                policies.
               </p>
               <h4 className="font-bold">Modules include:</h4>
               <ul className="list-disc pl-6 space-y-2">
@@ -175,9 +177,7 @@ const CorporateTraining = () => {
               Institutional Capacity
             </AccordionTrigger>
             <AccordionContent className="space-y-4 text-gray-700">
-              <p>
-                Strengthening systems and processes for performance.
-              </p>
+              <p>Strengthening systems and processes for performance.</p>
               <h4 className="font-bold">Modules include:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Organizational development</li>
@@ -194,9 +194,7 @@ const CorporateTraining = () => {
               Sustainability & Impact
             </AccordionTrigger>
             <AccordionContent className="space-y-4 text-gray-700">
-              <p>
-                Integrating ESG and social impact into strategy.
-              </p>
+              <p>Integrating ESG and social impact into strategy.</p>
               <h4 className="font-bold">Modules include:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li>ESG strategy</li>
@@ -213,9 +211,7 @@ const CorporateTraining = () => {
               Technology & Innovation
             </AccordionTrigger>
             <AccordionContent className="space-y-4 text-gray-700">
-              <p>
-                Leveraging digital solutions for governance efficiency.
-              </p>
+              <p>Leveraging digital solutions for governance efficiency.</p>
               <h4 className="font-bold">Modules include:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Digital transformation</li>
@@ -298,8 +294,8 @@ const CorporateTraining = () => {
       </ContentSection>
 
       <ContentSection title="Our Training Process" background="light">
-        <div className="flex flex-col md:flex-row gap-4 justify-between max-w-4xl mx-auto">
-          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 justify-between max-w-7xl mx-auto">
+          <div className="flex items-center flex-col text-center p-6 bg-white shadow-md rounded-lg">
             <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
               1
             </div>
@@ -310,7 +306,7 @@ const CorporateTraining = () => {
               Identifying training requirements and goals
             </p>
           </div>
-          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+          <div className="flex items-center flex-col  text-center p-6 bg-white shadow-md rounded-lg">
             <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
               2
             </div>
@@ -321,33 +317,28 @@ const CorporateTraining = () => {
               Crafting customized curriculum and activities
             </p>
           </div>
-          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+          <div className="flex items-center flex-col  text-center p-6 bg-white shadow-md rounded-lg">
             <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
               3
             </div>
-            <h3 className="text-lg font-bold text-primary mb-2">
-              Delivery
-            </h3>
+            <h3 className="text-lg font-bold text-primary mb-2">Delivery</h3>
             <p className="text-gray-600">
               Expert facilitation with interactive methods
             </p>
           </div>
-          <div className="text-center p-6 bg-white shadow-md rounded-lg">
+          <div className="flex items-center flex-col text-center p-6 bg-white shadow-md rounded-lg">
             <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-4">
               4
             </div>
-            <h3 className="text-lg font-bold text-primary mb-2">
-              Follow-Up
-            </h3>
+            <h3 className="text-lg font-bold text-primary mb-2">Follow-Up</h3>
             <p className="text-gray-600">
               Impact assessment and ongoing support
             </p>
           </div>
         </div>
       </ContentSection>
-
     </div>
-  )
-}
+  );
+};
 
-export default CorporateTraining
+export default CorporateTraining;

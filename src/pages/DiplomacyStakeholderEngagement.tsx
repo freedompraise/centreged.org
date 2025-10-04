@@ -1,11 +1,10 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion'
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import {
   Users,
   Megaphone,
@@ -15,34 +14,29 @@ import {
   Check,
   MessageCircle,
   Building,
-  Handshake
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
+  Handshake,
+} from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Hero,
   ContentSection,
   CardItem,
   ListItemWithIcon,
-  CallToAction
-} from '@/components/PageComponents'
+  CallToAction,
+} from '@/components/PageComponents';
 
 const scrollIn = {
   initial: { opacity: 0, y: 50 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6 }
-}
+  transition: { duration: 0.6 },
+};
 
 const DiplomacyStakeholderEngagement = () => {
   return (
     <div className="flex flex-col space-y-12">
       <Hero
-      backgroundImage='https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'
+        backgroundImage="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200"
         title="Stakeholder Engagement & Policy Advocacy"
         subtitle="Building bridges to drive inclusive policy."
       />
@@ -58,7 +52,8 @@ const DiplomacyStakeholderEngagement = () => {
               Effective policy requires active stakeholder engagement.
             </p>
             <p className="text-gray-700">
-              We connect government, private sector, civil society, and citizens.
+              We connect government, private sector, civil society, and
+              citizens.
             </p>
             <p className="text-gray-700">
               Our advocacy is evidence-based and focused on tangible outcomes.
@@ -83,7 +78,9 @@ const DiplomacyStakeholderEngagement = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-gray-700">
-                  <p>Structured dialogues between governments and businesses.</p>
+                  <p>
+                    Structured dialogues between governments and businesses.
+                  </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Policy roundtables with public and private leaders</li>
                     <li>Reform working groups</li>
@@ -170,19 +167,31 @@ const DiplomacyStakeholderEngagement = () => {
             <div className="space-y-4 text-gray-700">
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-primary mr-3 mt-1" />
-                <p><span className="font-semibold">Challenge:</span> Outdated trade policies limiting integration.</p>
+                <p>
+                  <span className="font-semibold">Challenge:</span> Outdated
+                  trade policies limiting integration.
+                </p>
               </div>
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-primary mr-3 mt-1" />
-                <p><span className="font-semibold">Approach:</span> Public-private dialogue platform for policy reform.</p>
+                <p>
+                  <span className="font-semibold">Approach:</span>{' '}
+                  Public-private dialogue platform for policy reform.
+                </p>
               </div>
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-primary mr-3 mt-1" />
-                <p><span className="font-semibold">Action:</span> Workshops, analysis, and drafting of new regulations.</p>
+                <p>
+                  <span className="font-semibold">Action:</span> Workshops,
+                  analysis, and drafting of new regulations.
+                </p>
               </div>
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-primary mr-3 mt-1" />
-                <p><span className="font-semibold">Results:</span> 24% increase in regional trade within 18 months.</p>
+                <p>
+                  <span className="font-semibold">Results:</span> 24% increase
+                  in regional trade within 18 months.
+                </p>
               </div>
             </div>
           </div>
@@ -197,17 +206,17 @@ const DiplomacyStakeholderEngagement = () => {
           centered
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg text-center">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <FileText className="h-8 w-8 text-primary mx-auto mb-2" />
               <h3 className="text-2xl font-bold text-primary">40+</h3>
               <p className="text-gray-600">Policy reforms influenced</p>
             </div>
-            <div className="bg-white p-6 rounded-lg text-center">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <MessageCircle className="h-8 w-8 text-primary mx-auto mb-2" />
               <h3 className="text-2xl font-bold text-primary">12,000+</h3>
               <p className="text-gray-600">Stakeholders engaged</p>
             </div>
-            <div className="bg-white p-6 rounded-lg text-center">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <Handshake className="h-8 w-8 text-primary mx-auto mb-2" />
               <h3 className="text-2xl font-bold text-primary">25+</h3>
               <p className="text-gray-600">Regional partnerships formed</p>
@@ -222,19 +231,33 @@ const DiplomacyStakeholderEngagement = () => {
           subtitle="Our structured approach"
           background="white"
         >
-          <div className="flex flex-col md:flex-row gap-4 max-w-5xl mx-auto">
-            {['Stakeholder Mapping','Evidence Gathering','Engagement Design','Facilitated Dialogue','Implementation'].map((step, i) => (
-              <div key={i} className="flex-1 bg-secondary p-6 rounded-lg text-center">
+          <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 md:flex-row gap-4 max-w-7xl mx-auto">
+            {[
+              'Stakeholder Mapping',
+              'Evidence Gathering',
+              'Engagement Design',
+              'Facilitated Dialogue',
+              'Implementation',
+            ].map((step, i) => (
+              <div
+                key={i}
+                className="flex-1 bg-secondary p-6 rounded-lg text-center shadow-md"
+              >
                 <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-2">
-                  {i+1}
+                  {i + 1}
                 </div>
                 <h3 className="text-lg font-bold text-primary mb-1">{step}</h3>
                 <p className="text-gray-600">
-                  {step === 'Stakeholder Mapping' && 'Identifying key actors and interests.'}
-                  {step === 'Evidence Gathering' && 'Research-based policy analysis.'}
-                  {step === 'Engagement Design' && 'Creating participatory processes.'}
-                  {step === 'Facilitated Dialogue' && 'Building consensus and outcomes.'}
-                  {step === 'Implementation' && 'Supporting action and monitoring.'}
+                  {step === 'Stakeholder Mapping' &&
+                    'Identifying key actors and interests.'}
+                  {step === 'Evidence Gathering' &&
+                    'Research-based policy analysis.'}
+                  {step === 'Engagement Design' &&
+                    'Creating participatory processes.'}
+                  {step === 'Facilitated Dialogue' &&
+                    'Building consensus and outcomes.'}
+                  {step === 'Implementation' &&
+                    'Supporting action and monitoring.'}
                 </p>
               </div>
             ))}
@@ -289,11 +312,12 @@ const DiplomacyStakeholderEngagement = () => {
         background="light"
       >
         <p className="text-gray-700">
-          Our initiatives unite policymakers, community leaders, and experts for inclusive policy development.
+          Our initiatives unite policymakers, community leaders, and experts for
+          inclusive policy development.
         </p>
       </ContentSection>
     </div>
-  )
-}
+  );
+};
 
-export default DiplomacyStakeholderEngagement
+export default DiplomacyStakeholderEngagement;

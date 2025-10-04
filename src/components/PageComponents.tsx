@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -13,21 +11,21 @@ interface HeroProps {
   overlay?: boolean;
 }
 
-export const Hero = ({ 
-  title, 
-  subtitle, 
-  buttonText, 
-  buttonLink = "#",
+export const Hero = ({
+  title,
+  subtitle,
+  buttonText,
+  buttonLink = '#',
   backgroundImage,
-  overlay = true
+  overlay = true,
 }: HeroProps) => {
   return (
-    <motion.section 
+    <motion.section
       className="pt-32 pb-16 bg-cover bg-center text-white relative"
-      style={{ 
-        backgroundImage: overlay 
-          ? `linear-gradient(rgba(26, 54, 93, 0.85), rgba(42, 92, 130, 0.9)), url(${backgroundImage})` 
-          : `url(${backgroundImage})` 
+      style={{
+        backgroundImage: overlay
+          ? `linear-gradient(rgba(26, 54, 93, 0.85), rgba(42, 92, 130, 0.9)), url(${backgroundImage})`
+          : `url(${backgroundImage})`,
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -38,12 +36,7 @@ export const Hero = ({
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
           {subtitle && <p className="text-xl mb-8">{subtitle}</p>}
           {buttonText && (
-            <Button 
-              to={buttonLink} 
-              variant="gold" 
-              size="lg"
-              className="mt-4"
-            >
+            <Button to={buttonLink} variant="gold" size="lg" className="mt-4">
               {buttonText}
             </Button>
           )}
@@ -70,19 +63,23 @@ export const ContentSection = ({
   children,
   background = 'white',
   centered = false,
-  className = ''
+  className = '',
 }: ContentSectionProps) => {
   const getBgClass = () => {
     switch (background) {
-      case 'light': return 'bg-secondary';
-      case 'primary': return 'bg-primary text-white';
-      case 'gradient': return 'bg-gradient-primary text-white';
-      default: return 'bg-white';
+      case 'light':
+        return 'bg-secondary';
+      case 'primary':
+        return 'bg-primary text-white';
+      case 'gradient':
+        return 'bg-gradient-primary text-white';
+      default:
+        return 'bg-white';
     }
   };
 
   return (
-    <motion.section 
+    <motion.section
       id={id}
       className={cn(`py-16 ${getBgClass()}`, className)}
       initial={{ opacity: 0, y: 20 }}
@@ -92,11 +89,23 @@ export const ContentSection = ({
     >
       <div className="container mx-auto px-4">
         <div className={`mb-10 ${centered ? 'text-center' : ''}`}>
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${background === 'white' || background === 'light' ? 'text-primary' : 'text-white'}`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 ${
+              background === 'white' || background === 'light'
+                ? 'text-primary'
+                : 'text-white'
+            }`}
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className={`text-lg ${background === 'white' || background === 'light' ? 'text-gray-600' : 'text-gray-200'}`}>
+            <p
+              className={`text-lg ${
+                background === 'white' || background === 'light'
+                  ? 'text-gray-600'
+                  : 'text-gray-200'
+              }`}
+            >
               {subtitle}
             </p>
           )}
@@ -115,12 +124,22 @@ interface CardItemProps {
   link?: string;
 }
 
-export const CardItem = ({ title, description, icon, image, link }: CardItemProps) => {
+export const CardItem = ({
+  title,
+  description,
+  icon,
+  image,
+  link,
+}: CardItemProps) => {
   const content = (
     <div className="bg-white rounded-lg shadow-md overflow-hidden h-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
       {image && (
         <div className="w-full h-48 overflow-hidden">
-          <img src={image} alt={title} className="w-full h-full object-cover object-center" />
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover object-center"
+          />
         </div>
       )}
       <div className="p-6">
@@ -150,7 +169,11 @@ interface ListItemWithIconProps {
   description?: string;
 }
 
-export const ListItemWithIcon = ({ icon, title, description }: ListItemWithIconProps) => {
+export const ListItemWithIcon = ({
+  icon,
+  title,
+  description,
+}: ListItemWithIconProps) => {
   return (
     <div className="flex items-start mb-6">
       <div className="bg-primary/10 p-2 rounded-md text-primary mr-4 flex-shrink-0">
@@ -173,9 +196,17 @@ interface StatsCardProps {
 export const StatsCard = ({ value, label, icon }: StatsCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 text-center">
-      {icon && <div className="text-primary text-4xl mb-3 flex justify-center">{icon}</div>}
-      <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{value}</div>
-      <div className="text-sm text-gray-500 uppercase tracking-wider">{label}</div>
+      {icon && (
+        <div className="text-primary text-4xl mb-3 flex justify-center">
+          {icon}
+        </div>
+      )}
+      <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+        {value}
+      </div>
+      <div className="text-sm text-gray-500 uppercase tracking-wider">
+        {label}
+      </div>
     </div>
   );
 };
@@ -188,21 +219,25 @@ interface CallToActionProps {
   backgroundImage?: string;
 }
 
-export const CallToAction = ({ 
-  title, 
-  subtitle, 
-  buttonText, 
+export const CallToAction = ({
+  title,
+  subtitle,
+  buttonText,
   buttonLink,
-  backgroundImage 
+  backgroundImage,
 }: CallToActionProps) => {
   return (
-    <motion.section 
+    <motion.section
       className="py-16 bg-gradient-primary text-white text-center"
-      style={backgroundImage ? { 
-        backgroundImage: `linear-gradient(rgba(26, 54, 93, 0.9), rgba(42, 92, 130, 0.95)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      } : {}}
+      style={
+        backgroundImage
+          ? {
+              backgroundImage: `linear-gradient(rgba(26, 54, 93, 0.9), rgba(42, 92, 130, 0.95)), url(${backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }
+          : {}
+      }
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -210,12 +245,10 @@ export const CallToAction = ({
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-        {subtitle && <p className="text-xl mb-8 max-w-2xl mx-auto">{subtitle}</p>}
-        <Button 
-          to={buttonLink} 
-          variant="gold" 
-          size="lg"
-        >
+        {subtitle && (
+          <p className="text-xl mb-8 max-w-2xl mx-auto">{subtitle}</p>
+        )}
+        <Button to={buttonLink} variant="gold" size="lg">
           {buttonText}
         </Button>
       </div>
